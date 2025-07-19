@@ -1,0 +1,61 @@
+@import 'bootstrap/scss/mixins';
+
+// ===== MIXINS RESPONSIVOS SIMPLES =====
+
+// Mixins específicos para facilitar uso
+@mixin mobile-only {
+	@media (max-width: 767px) {
+		@content;
+	}
+}
+
+@mixin tablet-only {
+	@media (min-width: 768px) and (max-width: 991px) {
+		@content;
+	}
+}
+
+@mixin desktop-only {
+	@media (min-width: 992px) {
+		@content;
+	}
+}
+
+@mixin hd-desktop-only {
+	@media (min-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin full-hd-desktop-only {
+	@media (min-width: 1600px) {
+		@content;
+	}
+}
+
+// ===== CLASSES UTILITÁRIAS RESPONSIVAS =====
+.hide-mobile {
+	@include mobile-only {
+		display: none !important;
+	}
+}
+
+.hide-desktop {
+	@include desktop-only {
+		display: none !important;
+	}
+}
+
+.show-mobile {
+	display: none !important;
+	@include mobile-only {
+		display: block !important;
+	}
+}
+
+.show-desktop {
+	display: none !important;
+	@include desktop-only {
+		display: block !important;
+	}
+}

@@ -1,0 +1,30 @@
+@use '../../scss/utils/variables' as *;
+@use '../../scss/utils/responsive' as *;
+
+.dropdownButton {
+	display: flex;
+	background: var(--gradient-primary);
+	color: var(--text-primary);
+	padding: 0.5rem;
+	align-items: start;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+}
+
+.dropdownMenuItems {
+	backdrop-filter: blur(10px);
+}
+
+.menuItem {
+	transition: all 0.3s ease;
+
+	&:hover {
+		background: rgba(145, 70, 255, 0.1);
+	}
+
+	&:focus {
+		background: rgba(145, 70, 255, 0.25);
+		outline: none;
+	}
+}

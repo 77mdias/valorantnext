@@ -1,0 +1,98 @@
+// Cores estilo Twitch
+$twitch-purple: #9146ff;
+$twitch-dark: #0e0e10;
+$twitch-darker: #18181b;
+$twitch-card: #1f1f23;
+
+//cores estilo spotify
+$spotify-green: #2bff75;
+$spotify-dark: #121212;
+$spotify-darker: #000000;
+$spotify-card: #181818;
+
+// Cores adicionais
+$accent-blue: #00a8ff;
+$accent-red: #ff4655;
+$text-light: #efeff1;
+$text-gray: #adadb8;
+$bg-dark: linear-gradient(135deg, #181824 0%, #23243a 50%, #2e1a47 100%);
+$bg-darker: #0a0a0c;
+
+// Gradientes
+$purple-gradient: linear-gradient(135deg, $twitch-purple 0%, #5d3aff 100%);
+$red-gradient: linear-gradient(135deg, $accent-red 0%, #ff6b6b 100%);
+
+// Bordas
+$border-radius: 12px;
+$border-radius-sm: 8px;
+
+// Variáveis CSS para temas
+:root {
+	// Tema escuro (padrão)
+	--gradient-primary: #{$purple-gradient};
+	--accent-shadow: rgba(145, 70, 255, 0.4);
+	--bg-primary: #{$bg-dark};
+	--bg-secondary: #{$twitch-darker};
+	--bg-card: #{$twitch-card};
+	--bg-input: #{$twitch-card};
+	--text-primary: #{$text-light};
+	--text-secondary: #{$text-gray};
+	--text-muted: #{$text-gray};
+	--accent-primary: #{$twitch-purple};
+	--accent-secondary: #{$spotify-green};
+	--accent-hover: rgba(145, 70, 255, 0.1);
+	--accent-focus: rgba(145, 70, 255, 0.3);
+	--accent-shadow: rgba(145, 70, 255, 0.4);
+	--border-color: rgba(255, 255, 255, 0.1);
+	--shadow-sm: rgba(0, 0, 0, 0.2);
+	--shadow-md: rgba(0, 0, 0, 0.3);
+	--shadow-lg: rgba(0, 0, 0, 0.5);
+	--gradient-primary: #{$purple-gradient};
+	--logo-filter: none;
+}
+
+// Tema claro - REDESENHADO
+.light {
+	--gradient-primary: linear-gradient(135deg, #{$twitch-purple} 0%, #7c3aed 100%);
+	--accent-shadow: rgba(145, 70, 255, 0.25);
+	--bg-primary: linear-gradient(120deg, #f5f6fa 0%, #e9e9f3 40%, #e0e7ff 70%, #f8fafc 100%);
+	--bg-secondary: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+	--bg-card: rgba(255, 255, 255, 0.9);
+	--bg-input: rgba(255, 255, 255, 0.8);
+	--text-primary: #1e293b;
+	--text-secondary: #475569;
+	--text-muted: #64748b;
+	--accent-primary: #{$twitch-purple};
+	--accent-hover: rgba(145, 70, 255, 0.12);
+	--accent-focus: rgba(145, 70, 255, 0.25);
+	--accent-shadow: rgba(145, 70, 255, 0.25);
+	--border-color: rgba(145, 70, 255, 0.15);
+	--shadow-sm: rgba(100, 116, 139, 0.1);
+	--shadow-md: rgba(100, 116, 139, 0.15);
+	--shadow-lg: rgba(100, 116, 139, 0.2);
+	--gradient-primary: linear-gradient(135deg, #{$twitch-purple} 0%, #7c3aed 100%);
+	--logo-filter: drop-shadow(0 2px 4px rgba(145, 70, 255, 0.3));
+}
+
+// Tema escuro (explícito)
+.dark {
+	--gradient-primary: #{$purple-gradient};
+	--accent-shadow: rgba(145, 70, 255, 0.4);
+	--bg-primary: #{$bg-dark};
+	--bg-secondary: #{$twitch-darker};
+	--bg-card: #{$twitch-card};
+	--bg-input: #{$twitch-card};
+	--text-primary: #{$text-light};
+	--text-secondary: #{$text-gray};
+	--text-muted: #{$text-gray};
+	--accent-primary: #{$twitch-purple};
+	--accent-hover: rgba(145, 70, 255, 0.1);
+	--accent-focus: rgba(145, 70, 255, 0.3);
+	--accent-shadow: rgba(145, 70, 255, 0.4);
+	--border-color: rgba(255, 255, 255, 0.1);
+	--shadow-sm: rgba(0, 0, 0, 0.2);
+	--shadow-md: rgba(0, 0, 0, 0.3);
+	--shadow-lg: rgba(0, 0, 0, 0.5);
+	--gradient-primary: #{$purple-gradient};
+	--logo-filter: none;
+}

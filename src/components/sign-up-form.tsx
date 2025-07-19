@@ -2,13 +2,14 @@
 
 import { cn } from '@/src/lib/utils';
 import { createClient } from '@/src/lib/supabase/client';
-import { Button } from '@/src/components/ui/button';
+import { Button } from '@/src/components/ui/button-radix';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/src/components/ui/card';
 import { Input } from '@/src/components/ui/input';
 import { Label } from '@/src/components/ui/label';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { SquareArrowLeft } from 'lucide-react';
 
 export function SignUpForm({ className, ...props }: React.ComponentPropsWithoutRef<'div'>) {
 	const [email, setEmail] = useState('');
@@ -50,9 +51,14 @@ export function SignUpForm({ className, ...props }: React.ComponentPropsWithoutR
 	return (
 		<div className={cn('flex flex-col gap-6', className)} {...props}>
 			<Card>
-				<CardHeader>
-					<CardTitle className="text-2xl">Sign up</CardTitle>
-					<CardDescription>Create a new account</CardDescription>
+				<CardHeader className="flex flex-row justify-between">
+					<div>
+						<CardTitle className="text-2xl">Registrar</CardTitle>
+						<CardDescription>Crie uma nova conta</CardDescription>
+					</div>
+					<Link href="/" className="text-sm text-gray-500 flex items-center gap-2">
+						<SquareArrowLeft className="w-8 h-8" />
+					</Link>
 				</CardHeader>
 				<CardContent>
 					<form onSubmit={handleSignUp}>
@@ -70,37 +76,39 @@ export function SignUpForm({ className, ...props }: React.ComponentPropsWithoutR
 							</div>
 							<div className="grid gap-2">
 								<div className="flex items-center">
-									<Label htmlFor="password">Password</Label>
+									<Label htmlFor="password">Senha</Label>
 								</div>
 								<Input
 									id="password"
 									type="password"
 									required
+									placeholder="********"
 									value={password}
 									onChange={e => setPassword(e.target.value)}
 								/>
 							</div>
 							<div className="grid gap-2">
 								<div className="flex items-center">
-									<Label htmlFor="repeat-password">Repeat Password</Label>
+									<Label htmlFor="repeat-password">Repetir Senha</Label>
 								</div>
 								<Input
 									id="repeat-password"
 									type="password"
 									required
+									placeholder="********"
 									value={repeatPassword}
 									onChange={e => setRepeatPassword(e.target.value)}
 								/>
 							</div>
 							{error && <p className="text-sm text-red-500">{error}</p>}
 							<Button type="submit" className="w-full" disabled={isLoading}>
-								{isLoading ? 'Creating an account...' : 'Sign up'}
+								{isLoading ? 'Criando uma conta...' : 'Registrar'}
 							</Button>
 						</div>
 						<div className="mt-4 text-center text-sm">
-							Already have an account?{' '}
+							Já tem uma conta?{' '}
 							<Link href="/auth/login" className="underline underline-offset-4">
-								Login
+								Entrar
 							</Link>
 						</div>
 					</form>

@@ -1,0 +1,17 @@
+@use '../../scss/utils/variables' as *;
+@use '../../scss/utils/animations' as *;
+@use '../../scss/utils/responsive' as *;
+
+$pinkcolor: #f71356;
+
+.XT {
+	color: $pinkcolor;
+}
+
+.logo {
+	@include mobile-only {
+		width: 100px;
+		height: 100px;
+		color: red;
+	}
+}

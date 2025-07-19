@@ -1,0 +1,26 @@
+@use '../scss/utils/variables' as *;
+@use '../scss/utils/responsive' as *;
+
+.hero {
+	@include mobile-only {
+		gap: 0.2rem;
+
+		h1 {
+			margin-top: 2rem;
+		}
+	}
+}
+
+.logo {
+	@include mobile-only {
+		justify-content: center;
+		align-items: start;
+		img {
+			width: 4.5rem;
+			height: 4.5rem;
+		}
+		span {
+			font-size: 4rem;
+		}
+	}
+}
