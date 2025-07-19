@@ -1,105 +1,267 @@
-<a href="https://demo-nextjs-with-supabase.vercel.app/">
-  <img alt="Next.js and Supabase Starter Kit - the fastest way to build apps with Next.js and Supabase" src="https://demo-nextjs-with-supabase.vercel.app/opengraph-image.png">
-  <h1 align="center">Next.js and Supabase Starter Kit</h1>
-</a>
+<div align="center">
+  
+# 🎮 NextValorant - Escola de Valorant
 
-<p align="center">
- The fastest way to build apps with Next.js and Supabase
-</p>
+<img src="./public/logoPage/Valorant-Academy.jpg" alt="NextValorant Logo" width="200"/>
 
-<p align="center">
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#demo"><strong>Demo</strong></a> ·
-  <a href="#deploy-to-vercel"><strong>Deploy to Vercel</strong></a> ·
-  <a href="#clone-and-run-locally"><strong>Clone and run locally</strong></a> ·
-  <a href="#feedback-and-issues"><strong>Feedback and issues</strong></a>
-  <a href="#more-supabase-examples"><strong>More Examples</strong></a>
-</p>
-<br/>
+### 🚀 A melhor plataforma para aprender técnicas avançadas de Valorant
 
-## Features
+[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=nextdotjs)](https://nextjs.org)
+[![Supabase](https://img.shields.io/badge/Database-Supabase-green?style=for-the-badge&logo=supabase)](https://supabase.com)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://typescriptlang.org)
 
-- Works across the entire [Next.js](https://nextjs.org) stack
-  - App Router
-  - Pages Router
-  - Middleware
-  - Client
-  - Server
-  - It just works!
-- supabase-ssr. A package to configure Supabase Auth to use cookies
-- Password-based authentication block installed via the [Supabase UI Library](https://supabase.com/ui/docs/nextjs/password-based-auth)
-- Styling with [Tailwind CSS](https://tailwindcss.com)
-- Components with [shadcn/ui](https://ui.shadcn.com/)
-- Optional deployment with [Supabase Vercel Integration and Vercel deploy](#deploy-your-own)
-  - Environment variables automatically assigned to Vercel project
+---
 
-## Demo
+</div>
 
-You can view a fully working demo at [demo-nextjs-with-supabase.vercel.app](https://demo-nextjs-with-supabase.vercel.app/).
+## 📖 Sobre o Projeto
 
-## Deploy to Vercel
+**NextValorant** é uma simulação de escola online para Valorant, desenvolvida como projeto de estudo para praticar **Next.js**, **React**, **Supabase** e **TypeScript**.
 
-Vercel deployment will guide you through creating a Supabase account and project.
+O projeto oferece uma experiência completa de aprendizado com:
 
-After installation of the Supabase integration, all relevant environment variables will be assigned to the project so the deployment is fully functioning.
+- 🎯 **Páginas interativas** sobre agentes, mapas e estratégias
+- 🔐 **Sistema de autenticação** completo (cadastro, login, recuperação de senha)
+- 🎨 **Tema claro/escuro** adaptável
+- 📱 **Design responsivo** para todos os dispositivos
+- 🎮 **Interface moderna** inspirada no design do Valorant
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&project-name=nextjs-with-supabase&repository-name=nextjs-with-supabase&demo-title=nextjs-with-supabase&demo-description=This+starter+configures+Supabase+Auth+to+use+cookies%2C+making+the+user%27s+session+available+throughout+the+entire+Next.js+app+-+Client+Components%2C+Server+Components%2C+Route+Handlers%2C+Server+Actions+and+Middleware.&demo-url=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2F&external-id=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&demo-image=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2Fopengraph-image.png)
+> **Nota:** Este é um projeto educacional/portfólio, não oferece aulas reais do jogo.
 
-The above will also clone the Starter kit to your GitHub, you can clone that locally and develop locally.
+---
 
-If you wish to just develop locally and not deploy to Vercel, [follow the steps below](#clone-and-run-locally).
+## ✨ Features
 
-## Clone and run locally
+### 🎮 **Experiência do Usuário**
 
-1. You'll first need a Supabase project which can be made [via the Supabase dashboard](https://database.new)
+- ✅ Landing page com design moderno e animações
+- ✅ Navegação responsiva com dropdown menu mobile
+- ✅ Tema claro/escuro com transições suaves
+- ✅ Cards interativos de agentes e mapas
+- ✅ Seção de contatos e redes sociais
 
-2. Create a Next.js app using the Supabase Starter template npx command
+### 🔐 **Autenticação Completa**
 
-   ```bash
-   npx create-next-app --example with-supabase with-supabase-app
-   ```
+- ✅ Cadastro de usuários
+- ✅ Login/Logout
+- ✅ Recuperação de senha
+- ✅ Páginas protegidas
+- ✅ Middleware de autenticação
+- ✅ Persistência de sessão
 
-   ```bash
-   yarn create next-app --example with-supabase with-supabase-app
-   ```
+### 🛠️ **Tecnologias e Recursos**
 
-   ```bash
-   pnpm create next-app --example with-supabase with-supabase-app
-   ```
+- ✅ Next.js 15 com App Router
+- ✅ Server-side rendering (SSR)
+- ✅ TypeScript para type safety
+- ✅ Supabase para backend/banco de dados
+- ✅ SCSS/CSS Modules para estilização
+- ✅ Componentes shadcn/ui
+- ✅ Responsive design
+- ✅ Deploy automático na Vercel
 
-3. Use `cd` to change into the app's directory
+---
 
-   ```bash
-   cd with-supabase-app
-   ```
+## 🚀 Deploy & Demo
 
-4. Rename `.env.example` to `.env.local` and update the following:
+🌐 **Acesse a aplicação:** [nextvalurant.vercel.app](https://seu-projeto.vercel.app)
 
-   ```
-   NEXT_PUBLIC_SUPABASE_URL=[INSERT SUPABASE PROJECT URL]
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=[INSERT SUPABASE PROJECT API ANON KEY]
-   ```
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/seu-usuario/nextvalorant)
 
-   Both `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` can be found in [your Supabase project's API settings](https://supabase.com/dashboard/project/_?showConnect=true)
+---
 
-5. You can now run the Next.js local development server:
+## 🛠️ Stack Tecnológica
 
-   ```bash
-   npm run dev
-   ```
+| Tecnologia                                                                   | Versão | Uso              |
+| ---------------------------------------------------------------------------- | ------ | ---------------- |
+| ![Next.js](https://img.shields.io/badge/-Next.js-black?logo=nextdotjs)       | 15.x   | Framework React  |
+| ![TypeScript](https://img.shields.io/badge/-TypeScript-blue?logo=typescript) | 5.x    | Linguagem        |
+| ![Supabase](https://img.shields.io/badge/-Supabase-green?logo=supabase)      | Latest | Backend/Database |
+| ![Sass](https://img.shields.io/badge/-Sass-pink?logo=sass)                   | 1.89.x | Estilização      |
+| ![Tailwind](https://img.shields.io/badge/-Tailwind-cyan?logo=tailwindcss)    | 3.x    | CSS Framework    |
+| ![Vercel](https://img.shields.io/badge/-Vercel-black?logo=vercel)            | Latest | Deploy           |
 
-   The starter kit should now be running on [localhost:3000](http://localhost:3000/).
+---
 
-6. This template comes with the default shadcn/ui style initialized. If you instead want other ui.shadcn styles, delete `components.json` and [re-install shadcn/ui](https://ui.shadcn.com/docs/installation/next)
+## 🗂️ Estrutura do Projeto
 
-> Check out [the docs for Local Development](https://supabase.com/docs/guides/getting-started/local-development) to also run Supabase locally.
+```
+📦 NextValorant/
+├── 📁 src/
+│   ├── 📁 app/                    # App Router (Next.js 13+)
+│   │   ├── 📁 auth/               # Páginas de autenticação
+│   │   ├── 📁 protected/          # Páginas protegidas
+│   │   ├── layout.tsx             # Layout raiz
+│   │   ├── page.tsx               # Página inicial
+│   │   └── globals.scss           # Estilos globais
+│   ├── 📁 components/             # Componentes reutilizáveis
+│   │   ├── 📁 auth/               # Componentes de auth
+│   │   ├── 📁 ui/                 # Componentes UI base
+│   │   ├── 📁 Navbar/             # Navegação
+│   │   └── 📁 Sociais/            # Links sociais
+│   ├── 📁 lib/                    # Utilitários e configurações
+│   │   └── 📁 supabase/           # Cliente Supabase
+│   ├── 📁 context/                # React Context
+│   ├── 📁 hooks/                  # Custom hooks
+│   └── 📁 scss/                   # Estilos SCSS organizados
+├── 📁 public/                     # Assets estáticos
+│   ├── 📁 cards/                  # Imagens dos agentes
+│   ├── 📁 maps/                   # Imagens dos mapas
+│   └── 📁 logoPage/               # Logos e ícones
+├── middleware.ts                  # Middleware de autenticação
+├── package.json                   # Dependências
+└── README.md                      # Este arquivo
+```
 
-## Feedback and issues
+---
 
-Please file feedback and issues over on the [Supabase GitHub org](https://github.com/supabase/supabase/issues/new/choose).
+## ⚙️ Como rodar localmente
 
-## More Supabase examples
+### 1️⃣ **Clone o repositório**
 
-- [Next.js Subscription Payments Starter](https://github.com/vercel/nextjs-subscription-payments)
-- [Cookie-based Auth and the Next.js 13 App Router (free course)](https://youtube.com/playlist?list=PL5S4mPUpp4OtMhpnp93EFSo42iQ40XjbF)
-- [Supabase Auth and the Next.js App Router](https://github.com/supabase/supabase/tree/master/examples/auth/nextjs)
+```bash
+git clone https://github.com/seu-usuario/nextvalorant.git
+cd nextvalorant
+```
+
+### 2️⃣ **Instale as dependências**
+
+```bash
+npm install
+# ou
+yarn install
+# ou
+pnpm install
+```
+
+### 3️⃣ **Configure o Supabase**
+
+1. Crie um projeto no [Supabase](https://supabase.com)
+2. Renomeie `.env.example` para `.env.local`
+3. Adicione suas variáveis:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://seu-projeto.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=sua-chave-anonima
+```
+
+### 4️⃣ **Execute o projeto**
+
+```bash
+npm run dev
+```
+
+🌐 Acesse: [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🎨 Screenshots
+
+<div align="center">
+  
+### 🌙 Tema Escuro
+![Tema Escuro](./public/screenshots/dark-theme.png)
+
+### ☀️ Tema Claro
+
+![Tema Claro](./public/screenshots/light-theme.png)
+
+### 📱 Mobile Responsivo
+
+![Mobile](./public/screenshots/mobile.png)
+
+</div>
+
+---
+
+## 🚀 Deploy na Vercel
+
+### Deploy Automático
+
+1. Fork este repositório
+2. Conecte com a Vercel
+3. Configure as variáveis de ambiente
+4. Deploy! 🎉
+
+### Variáveis de Ambiente (Vercel)
+
+```
+NEXT_PUBLIC_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY
+```
+
+---
+
+## 🛣️ Roadmap
+
+- [ ] 📊 Dashboard do usuário
+- [ ] 🎯 Sistema de progresso/conquistas
+- [ ] 📚 Mais conteúdo educacional
+- [ ] 🎮 Integração com API do Valorant
+- [ ] 👥 Sistema de comunidade/fórums
+- [ ] 🏆 Ranking de usuários
+- [ ] 🎥 Upload de vídeos/tutoriais
+- [ ] 📧 Sistema de notificações
+
+---
+
+## 🤝 Como Contribuir
+
+1. **Fork** o projeto
+2. Crie uma **branch** para sua feature (`git checkout -b feature/nova-feature`)
+3. **Commit** suas mudanças (`git commit -m 'Add: nova feature'`)
+4. **Push** para a branch (`git push origin feature/nova-feature`)
+5. Abra um **Pull Request**
+
+### 📋 Padrão de Commits
+
+```
+✨ Add: Nova funcionalidade
+🐛 Fix: Correção de bug
+📚 Docs: Documentação
+🎨 Style: Formatação/estilo
+♻️ Refactor: Refatoração
+🚀 Perf: Performance
+✅ Test: Testes
+```
+
+---
+
+## 📱 Contato & Redes Sociais
+
+<div align="center">
+
+[![Instagram](https://img.shields.io/badge/-Instagram-E4405F?logo=instagram&logoColor=white&style=for-the-badge)](https://instagram.com/seu-instagram)
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?logo=linkedin&logoColor=white&style=for-the-badge)](https://linkedin.com/in/seu-linkedin)
+[![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white&style=for-the-badge)](https://github.com/seu-usuario)
+[![Email](https://img.shields.io/badge/-Email-D14836?logo=gmail&logoColor=white&style=for-the-badge)](mailto:seu-email@gmail.com)
+
+</div>
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença **MIT**. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
+
+---
+
+## 🎮 Créditos
+
+- **Valorant**: Propriedade da Riot Games
+- **Design**: Inspirado no universo visual do Valorant
+- **Desenvolvimento**: Projeto pessoal de estudo
+- **Tecnologias**: Next.js, Supabase, Vercel
+
+---
+
+<div align="center">
+
+### 🌟 Se gostou do projeto, deixe uma ⭐!
+
+**Feito com 💜 para a comunidade dev**
+
+_Este projeto é apenas para fins educacionais e não possui afiliação oficial com a Riot Games_
+
+</div>
