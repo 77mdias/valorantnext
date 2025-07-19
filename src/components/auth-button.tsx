@@ -18,12 +18,12 @@ export async function AuthButton() {
 		</div>
 	) : (
 		<div className={`flex gap-2 ${styles.authButton}`}>
-			<button className={`text-sm ${styles['btnClass']}`}>
-				<Link href="/auth/login">Entrar</Link>
-			</button>
-			<button className={styles['btnOutlined']}>
-				<Link href="/auth/sign-up">Cadastrar</Link>
-			</button>
+			<Link href="/auth/login">
+				<button className={`text-sm ${styles['btnClass']}`}>Entrar</button>
+			</Link>
+			<Link href="/auth/sign-up">
+				<button className={styles['btnOutlined']}>Cadastrar</button>
+			</Link>
 		</div>
 	);
 }
