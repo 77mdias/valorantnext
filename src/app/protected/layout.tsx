@@ -1,8 +1,8 @@
 import { DeployButton } from '@/src/components/deploy-button';
-import { EnvVarWarning } from '@/src/components/env-var-warning';
+// import { EnvVarWarning } from '@/src/components/env-var-warning';
 import { AuthButton } from '@/src/components/auth-button';
 import { ThemeSwitcher } from '@/src/components/theme-switcher';
-import { hasEnvVars } from '@/src/lib/utils';
+// import { hasEnvVars } from '@/src/lib/utils';
 import Link from 'next/link';
 
 export default function ProtectedLayout({ children }: { children: React.ReactNode }) {
@@ -17,7 +17,8 @@ export default function ProtectedLayout({ children }: { children: React.ReactNod
 								<DeployButton />
 							</div>
 						</div>
-						{!hasEnvVars ? <EnvVarWarning /> : <AuthButton />}
+						{/* {!hasEnvVars ? <EnvVarWarning /> : <AuthButton />} */}
+						<AuthButton />
 					</div>
 				</nav>
 				<div className="flex-1 flex flex-col gap-20 max-w-5xl p-5">{children}</div>
