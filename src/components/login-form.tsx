@@ -24,15 +24,26 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
 		setIsLoading(true);
 		setError(null);
 
+		// Tenta fazer o login do usuário
 		try {
 			const { error } = await supabase.auth.signInWithPassword({
 				email,
 				password,
 			});
-			if (error) throw error;
-			// Update this route to redirect to an authenticated route. The user already has an active session.
+			// Se der erro, envia uma mensagem de erro
+			if (error) {
+				console.log('ERRO DO SUPABASE: ', error);
+				if (error.message.includes('invalid credentials')) {
+					setError('Email ou senha inválidos');
+				} else {
+					setError('Erro ao fazer login, tente novamente');
+				}
+				return;
+			}
+			// Redireciona para a página protegida
 			router.push('/protected');
 		} catch (error: unknown) {
+			// Se der erro, envia uma mensagem de erro
 			setError(error instanceof Error ? error.message : 'An error occurred');
 		} finally {
 			setIsLoading(false);

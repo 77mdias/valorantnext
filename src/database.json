@@ -1,0 +1,1394 @@
+[
+  {
+    "id": 1,
+    "name": "Jett",
+    "role": "Duelist",
+    "skills": "Movimentos Ágeis",
+    "dica": "Domine as habilidades de movimento",
+    "biography": "Representando a Coreia do Sul, sua terra natal, Jett tem um estilo de luta ágil e evasivo que permite que ela assuma riscos como ninguém. Ela corre em meio a qualquer confronto, cortando os inimigos antes mesmo que eles percebam quem ou o que os atingiu.",
+    "imageKey": "jett-card",
+    "abilities": [
+      {
+        "name": "Corrente Ascendente",
+        "icon": "fas fa-arrow-up",
+        "cost": 150,
+        "charges": 1
+      },
+      {
+        "name": "Brisa de Impulso",
+        "icon": "fas fa-wind",
+        "cost": 0,
+        "charges": 1
+      },
+      {
+        "name": "Erupção de Brumas",
+        "icon": "fas fa-fan",
+        "cost": 200,
+        "charges": 2
+      },
+      {
+        "name": "Tempestade de Lâminas",
+        "icon": "fas fa-khanda",
+        "cost": 8,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Entrada Agressiva",
+        "description": "Use a mobilidade de Jett para entrar rapidamente em sites e criar espaço para sua equipe.",
+        "tips": [
+          "Combine Brisa de Impulso com Corrente Ascendente para movimentos imprevisíveis",
+          "Use Erupção de Brumas para limpar ângulos comuns",
+          "Mantenha uma rota de fuga planejada"
+        ]
+      },
+      {
+        "title": "Operador Expert",
+        "description": "Jett é excelente com o Operador devido à sua mobilidade após atirar.",
+        "tips": [
+          "Posicione-se em ângulos arriscados",
+          "Após o tiro, use Brisa de Impulso para recuar",
+          "Alterne entre posições agressivas e passivas"
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Dominando a Mobilidade",
+        "description": "Aprenda as melhores combinações de habilidades para movimento.",
+        "thumbnail": "jettMobility"
+      },
+      {
+        "title": "Guia do Operator",
+        "description": "Como usar a Operator efetivamente com Jett.",
+        "thumbnail": "jettOperator"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Sova",
+    "role": "Initiator",
+    "skills": "Reconhecimento",
+    "dica": "Use as flechas de reconhecimento eficientemente",
+    "biography": "Nascido sob o eterno inverno das tundras russas, Sova rastreia, encontra e elimina inimigos com eficiência e precisão implacáveis. Seu arco personalizado e suas habilidades de reconhecimento garantem que nenhuma presa escape.",
+    "imageKey": "sova-card",
+    "abilities": [
+      {
+        "name": "Flecha Chocante",
+        "icon": "fas fa-bolt",
+        "cost": 150,
+        "charges": 2
+      },
+      {
+        "name": "Drone",
+        "icon": "fas fa-dove",
+        "cost": 400,
+        "charges": 1
+      },
+      {
+        "name": "Flecha Rastreadora",
+        "icon": "fas fa-eye",
+        "cost": 150,
+        "charges": 2
+      },
+      {
+        "name": "Fúria do Caçador",
+        "icon": "fas fa-crosshairs",
+        "cost": 8,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Reconhecimento Efetivo",
+        "description": "Use as flechas de Sova para coletar informações cruciais para sua equipe.",
+        "tips": [
+          "Aprenda alinhamentos de flechas comuns",
+          "Use o drone para entradas seguras",
+          "Comunique as informações para sua equipe"
+        ]
+      },
+      {
+        "title": "Pós-Planta Mestre",
+        "description": "Sova é excelente em situações pós-planta com suas flechas e ultimate.",
+        "tips": [
+          "Aprenda posições seguras para usar flechas",
+          "Combine ultimate com informações da equipe",
+          "Use flechas para negar defuse"
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Alinhamentos Essenciais",
+        "description": "Os principais alinhamentos de flechas para cada mapa.",
+        "thumbnail": "sovaSpots"
+      },
+      {
+        "title": "Guia de Reconhecimento",
+        "description": "Como maximizar a coleta de informações.",
+        "thumbnail": "sovaDrone"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Omen",
+    "role": "Controller",
+    "skills": "Manipulação",
+    "dica": "Posicionamento estratégico de smokes e teleportes",
+    "biography": "Omen, um assassino misterioso e habilidoso, usa os poderes de invocação de um antigo artefato para manipular a realidade e caçar seus inimigos. Ele pode aparecer e desaparecer em um piscar de olhos, deixando seus oponentes confusos e desorientados.",
+    "imageKey": "omen-card",
+    "abilities": [
+      {
+        "name": "Paranóia",
+        "icon": "fas fa-eye-slash",
+        "cost": 100,
+        "charges": 1
+      },
+      {
+        "name": "Manto Sombrio",
+        "icon": "fas fa-location-arrow",
+        "cost": 100,
+        "charges": 1
+      },
+      {
+        "name": "Passos Tenebrosos",
+        "icon": "fas fa-eye-slash",
+        "cost": 100,
+        "charges": 1
+      },
+      {
+        "name": "Ultimate",
+        "icon": "fas fa-eye-slash",
+        "cost": 100,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Controle de Inimigos",
+        "description": "Use a invisibilidade de Omen para se mover sem ser visto e atacar inimigos.",
+        "tips": [
+          "Use a invisibilidade para se mover sem ser visto",
+          "Use a Ultimate para controlar inimigos e surpreender",
+          "Use a paranóia para cegar os inimigos e atacar"
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Controle de Inimigos",
+        "description": "Use a invisibilidade de Omen para se mover sem ser visto e atacar inimigos.",
+        "thumbnail": "/assets/tutorials/omen-control.jpg"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Reyna",
+    "role": "Duelist",
+    "skills": "Manipulação",
+    "dica": "Maximizar eliminações e impactos.",
+    "biography": "Reyna, uma assassina mexicana, usa seus poderes de invocação para caçar inimigos e se tornar a maior assassina do mundo. Ela pode aparecer e desaparecer em um piscar de olhos, deixando seus oponentes confusos e desorientados.",
+    "imageKey": "reyna-card",
+    "abilities": [
+      {
+        "name": "DEVORAR",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 1
+      },
+      {
+        "name": "DISPENSAR",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 1
+      },
+      {
+        "name": "Olhar Voraz",
+        "icon": "fas fa-bolt",
+        "cost": 250,
+        "charges": 2
+      },
+      {
+        "name": "IMPERATRIZ",
+        "icon": "fas fa-bolt",
+        "cost": 6,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Dominio de Kills",
+        "description": "Use a habilidade IMPERATRIZ para aumentar ainda mais a eficiência de eliminações.",
+        "tips": [
+          "Use Devorar para curar e aumentar a eficiência de eliminações",
+          "Use Dispensar para se esconder e se preparar para uma ação",
+          "Use Olhar Voraz para cegar inimigos e atacar"
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Dominio de Kills",
+        "description": "Use a habilidade IMPERATRIZ para aumentar ainda mais a eficiência de eliminações.",
+        "thumbnail": "/assets/tutorials/reyna-kills.jpg"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Phoenix",
+    "role": "Duelist",
+    "skills": "Manipulação",
+    "dica": "Use as habilidades de Phoenix para controlar o jogo",
+    "biography": "Phoenix, um jovem e talentoso jogador de Counter-Strike, usa seus poderes de invocação para caçar inimigos e se tornar a maior assassina do mundo. Ela pode aparecer e desaparecer em um piscar de olhos, deixando seus oponentes confusos e desorientados.",
+    "imageKey": "phoenix-card",
+    "abilities": [
+      {
+        "name": "Labareda",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 1
+      },
+      {
+        "name": "Bola Curva",
+        "icon": "fas fa-bolt",
+        "cost": 100,
+        "charges": 2
+      },
+      {
+        "name": "Mãos Quentes",
+        "icon": "fas fa-bolt",
+        "cost": 0,
+        "charges": 1
+      },
+      {
+        "name": "Renascimento",
+        "icon": "fas fa-bolt",
+        "cost": 6,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Dominio de Kills",
+        "description": "Use a habilidade IMPERATRIZ para aumentar ainda mais a eficiência de eliminações.",
+        "tips": [
+          "Use Laberada para criar uma parede e envolver jogadas com a Bola Curva",
+          "Use Mãos Quentes para tirar posição de inimigosou curar",
+          "Use Renascimento para se curar e se preparar para uma ação"
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Entrada Agressiva",
+        "description": "Use as habilidades para abrir pixeis e criar espaço para sua equipe.",
+        "thumbnail": "/assets/tutorials/phoenix-entry.jpg"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Killjoy",
+    "role": "Sentinel",
+    "skills": "Tecnologia",
+    "dica": "Use suas torres e armadilhas para controlar o mapa.",
+    "biography": "Killjoy, uma engenheira alemã brilhante, utiliza invenções de ponta para proteger zonas e obter vantagem estratégica sobre seus inimigos.",
+    "imageKey": "killjoy-card",
+    "abilities": [
+      {
+        "name": "Nanoenxame",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 2
+      },
+      {
+        "name": "Robô de Alarme",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 1
+      },
+      {
+        "name": "Torre",
+        "icon": "fas fa-bolt",
+        "cost": 0,
+        "charges": 1
+      },
+      {
+        "name": "Confinamento",
+        "icon": "fas fa-bolt",
+        "cost": 7,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Controle de Rotas",
+        "description": "Use o Robô de Alarme e a Torre para travar acessos importantes.",
+        "tips": [
+          "Posicione a Torre em locais elevados para melhor cobertura.",
+          "Combine Nanoenxame com o Fio de Alarme para dano garantido.",
+          "Use Confinamento em retakes ou ataques finais."
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Armadilhas Inteligentes",
+        "description": "Aprenda a posicionar a Torre e o Nanoenxame de forma estratégica.",
+        "thumbnail": "/assets/tutorials/killjoy-traps.jpg"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Brimstone",
+    "role": "Controller",
+    "skills": "Suporte tático",
+    "dica": "Use os smokes e ataques orbitais para isolar e dominar áreas.",
+    "biography": "Brimstone, um comandante americano, lidera o combate com precisão cirúrgica, usando seus recursos para apoiar sua equipe em campo.",
+    "imageKey": "brimstone-card",
+    "abilities": [
+      {
+        "name": "Incendiário",
+        "icon": "fas fa-bolt",
+        "cost": 250,
+        "charges": 1
+      },
+      {
+        "name": "Sinalizador Estimulante",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 2
+      },
+      {
+        "name": "Fumaça Celeste",
+        "icon": "fas fa-bolt",
+        "cost": 100,
+        "charges": 3
+      },
+      {
+        "name": "Ataque Orbital",
+        "icon": "fas fa-bolt",
+        "cost": 6,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Domínio de Área",
+        "description": "Crie zonas de negação com smokes e incendiários.",
+        "tips": [
+          "Use Fumaça Celeste para bloquear visão antes de iniciar a entrada.",
+          "Combine Incendiário com info da equipe para impedir defuses.",
+          "Utilize Ataque Orbital em locais plantados ou para forçar saídas inimigas."
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Smokes Eficientes",
+        "description": "Aprenda como usar suas smokes para cortar visão inimiga.",
+        "thumbnail": "/assets/tutorials/brimstone-smokes.jpg"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Sage",
+    "role": "Sentinel",
+    "skills": "Cura e suporte",
+    "dica": "Suporte sua equipe com cura e controle de movimentação inimiga.",
+    "biography": "Sage é uma monja chinesa com habilidades curativas e defensivas que garantem estabilidade para sua equipe nas piores situações.",
+    "imageKey": "sage-card",
+    "abilities": [
+      {
+        "name": "Orbe de Lentidão",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 2
+      },
+      {
+        "name": "Orbe de Cura",
+        "icon": "fas fa-bolt",
+        "cost": 0,
+        "charges": 1
+      },
+      {
+        "name": "Orbe de Barreira",
+        "icon": "fas fa-bolt",
+        "cost": 400,
+        "charges": 1
+      },
+      {
+        "name": "Ressurreição",
+        "icon": "fas fa-bolt",
+        "cost": 8,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Retenção e Cura",
+        "description": "Use a barreira para bloquear e o orbe para curar aliados.",
+        "tips": [
+          "Bloqueie corredores e entradas com o Orbe de Barreira.",
+          "Mantenha-se viva para poder usar a Ressurreição em momentos chave.",
+          "Orbe de Lentidão funciona bem em locais de rush ou planta/desarme."
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Sustentação da Equipe",
+        "description": "Aprenda a ser o suporte essencial com Sage.",
+        "thumbnail": "/assets/tutorials/sage-support.jpg"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Breach",
+    "role": "Initiator",
+    "skills": "Controle de território",
+    "dica": "Cegue, atordoe e force os inimigos a sair da posição.",
+    "biography": "Breach, um sueco com implantes biomecânicos, gera tremores de impacto que desestruturam qualquer defesa inimiga.",
+    "imageKey": "breach-card",
+    "abilities": [
+      {
+        "name": "Ponto de Ignição",
+        "icon": "fas fa-bolt",
+        "cost": 250,
+        "charges": 2
+      },
+      {
+        "name": "Pós-choque",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 1
+      },
+      {
+        "name": "Falha",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 1
+      },
+      {
+        "name": "Onda Sísmica",
+        "icon": "fas fa-bolt",
+        "cost": 7,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Abertura Forçada",
+        "description": "Prepare o push da sua equipe desestruturando a defesa inimiga.",
+        "tips": [
+          "Use Ponto de Ignição antes da entrada para cegar inimigos.",
+          "Combine Pós-choque com info de aliados para tirar inimigos do pixel.",
+          "A ultimate pode limpar todo um bombsite sozinha."
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Iniciações Perfeitas",
+        "description": "Aprenda os combos ideais para abrir espaço com Breach.",
+        "thumbnail": "/assets/tutorials/breach-init.jpg"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Cypher",
+    "role": "Sentinel",
+    "skills": "Informação e armadilhas",
+    "dica": "Controle áreas com informações e antecipe movimentos do inimigo.",
+    "biography": "Cypher, o espião marroquino, é mestre em vigiar e rastrear seus inimigos sem ser notado.",
+    "imageKey": "cypher-card",
+    "abilities": [
+      {
+        "name": "Fio-armadilha",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 2
+      },
+      {
+        "name": "Jaula Cibernética",
+        "icon": "fas fa-bolt",
+        "cost": 100,
+        "charges": 2
+      },
+      {
+        "name": "Câmera Espiã",
+        "icon": "fas fa-bolt",
+        "cost": 0,
+        "charges": 1
+      },
+      {
+        "name": "Assalto Neural",
+        "icon": "fas fa-bolt",
+        "cost": 6,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Vigilância Total",
+        "description": "Ganhe informação precisa com armadilhas e câmeras bem posicionadas.",
+        "tips": [
+          "Coloque fios em locais improváveis para surpreender inimigos.",
+          "Use a jaula com os fios para combos de controle e abate.",
+          "Use Assalto Neural logo após um abate para revelar toda a equipe inimiga."
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Setup de Defesa",
+        "description": "Configure armadilhas e câmera para segurar bombsites.",
+        "thumbnail": "/assets/tutorials/cypher-setup.jpg"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Chamber",
+    "role": "Sentinel",
+    "skills": "Precisão e armadilhas",
+    "dica": "Use armadilhas para informação e elimine com precisão cirúrgica.",
+    "biography": "Um designer de armas francês extremamente confiante, Chamber defende o campo com estilo e precisão letal.",
+    "imageKey": "chamber-card",
+    "abilities": [
+      {
+        "name": "Marca Registrada",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 1
+      },
+      {
+        "name": "Caçador de Cabeças",
+        "icon": "fas fa-bolt",
+        "cost": 150,
+        "charges": 8
+      },
+      {
+        "name": "Rendezvous",
+        "icon": "fas fa-bolt",
+        "cost": 0,
+        "charges": 1
+      },
+      {
+        "name": "Tour de Force",
+        "icon": "fas fa-bolt",
+        "cost": 7,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Controle e Sniper",
+        "description": "Utilize o teleport para jogar avançado e reposicionar rapidamente.",
+        "tips": [
+          "Use a Marca Registrada para avisar entradas.",
+          "Equipe o Caçador de Cabeças para duelos curtos.",
+          "Tour de Force é ideal para segurar bomb sozinho com precisão."
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Defesa Avançada",
+        "description": "Como dominar a defesa com teleport e precisão.",
+        "thumbnail": "/assets/tutorials/chamber-sniper.jpg"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Fade",
+    "role": "Initiator",
+    "skills": "Informação e medo",
+    "dica": "Use sua ultimate para revelar e sufocar os oponentes.",
+    "biography": "Fade, uma caçadora de pesadelos da Turquia, assombra seus inimigos com visões e gritos aterrorizantes.",
+    "imageKey": "fade-card",
+    "abilities": [
+      {
+        "name": "Assombrar",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 1
+      },
+      {
+        "name": "Apreensão",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 1
+      },
+      {
+        "name": "Garras",
+        "icon": "fas fa-bolt",
+        "cost": 250,
+        "charges": 2
+      },
+      {
+        "name": "Abraço da Noite",
+        "icon": "fas fa-bolt",
+        "cost": 7,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Caça Coordenada",
+        "description": "Combine info com entrada rápida do time.",
+        "tips": [
+          "Jogue Assombrar por cima de paredes para revelar grupos.",
+          "Apreensão prende e impede recuos.",
+          "Ultimate ideal em execuções de site."
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Reveal Total",
+        "description": "Lineups de Fade para diferentes mapas.",
+        "thumbnail": "/assets/tutorials/fade-reveal.jpg"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Neon",
+    "role": "Duelist",
+    "skills": "Velocidade e agressão",
+    "dica": "Use sua velocidade para abrir espaço e confundir o inimigo.",
+    "biography": "Neon, uma agente filipina, corre mais rápido que a luz e choca os inimigos com pura energia.",
+    "imageKey": "neon-card",
+    "abilities": [
+      {
+        "name": "Ricochete Elétrico",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 1
+      },
+      {
+        "name": "Mergulho Elétrico",
+        "icon": "fas fa-bolt",
+        "cost": 150,
+        "charges": 1
+      },
+      {
+        "name": "Velocidade",
+        "icon": "fas fa-bolt",
+        "cost": 0,
+        "charges": 1
+      },
+      {
+        "name": "Alta Voltagem",
+        "icon": "fas fa-bolt",
+        "cost": 7,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Corrida Rápida",
+        "description": "Corra e elimine rapidamente antes que o inimigo reaja.",
+        "tips": [
+          "Use a parede dupla da Velocidade para entrar com segurança.",
+          "Combine Ricochete com rush para confundir.",
+          "A ultimate é letal em combate próximo."
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Entradas Instantâneas",
+        "description": "Como surpreender inimigos com movimentação explosiva.",
+        "thumbnail": "/assets/tutorials/neon-speed.jpg"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Skye",
+    "role": "Initiator",
+    "skills": "Cura e informação",
+    "dica": "Use seus bichos para explorar e atrapalhar a defesa inimiga.",
+    "biography": "Vinda da Austrália, Skye comanda a natureza para curar aliados e rastrear inimigos com seus animais espirituais.",
+    "imageKey": "skye-card",
+    "abilities": [
+      {
+        "name": "Reflorescer",
+        "icon": "fas fa-bolt",
+        "cost": 150,
+        "charges": 2
+      },
+      {
+        "name": "Luz Guia",
+        "icon": "fas fa-bolt",
+        "cost": 250,
+        "charges": 2
+      },
+      {
+        "name": "Predador Explosivo",
+        "icon": "fas fa-bolt",
+        "cost": 300,
+        "charges": 1
+      },
+      {
+        "name": "Rastreadores",
+        "icon": "fas fa-bolt",
+        "cost": 7,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Reconhecimento Natural",
+        "description": "Use os animais para avançar com info segura.",
+        "tips": [
+          "Predador Explosivo limpa cantos perigosos.",
+          "Cure aliados antes de entradas importantes.",
+          "Use Rastreadores para rastrear inimigos escondidos."
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Skye Iniciadora",
+        "description": "Rotinas completas para iniciar com flash e cura.",
+        "thumbnail": "/assets/tutorials/skye-init.jpg"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Viper",
+    "role": "Controller",
+    "skills": "Controle com veneno",
+    "dica": "Crie zonas tóxicas para impedir movimentação e plantar com segurança.",
+    "biography": "Vinda dos EUA, Viper usa produtos químicos letais para controlar áreas inteiras com fumaça e ácido.",
+    "imageKey": "viper-card",
+    "abilities": [
+      {
+        "name": "Nuvem Venenosa",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 1
+      },
+      {
+        "name": "Veneno de Cobra",
+        "icon": "fas fa-bolt",
+        "cost": 100,
+        "charges": 2
+      },
+      {
+        "name": "Cortina Tóxica",
+        "icon": "fas fa-bolt",
+        "cost": 0,
+        "charges": 1
+      },
+      {
+        "name": "Poço Peçonhento",
+        "icon": "fas fa-bolt",
+        "cost": 8,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Domínio Tóxico",
+        "description": "Corte visão e force reposições com paredes venenosas.",
+        "tips": [
+          "Combine Veneno de Cobra com barreiras para dano garantido.",
+          "Nuvem pode ser reposicionada a cada rodada.",
+          "Poço Peçonhento é excelente para segurar spike plantada."
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Viper Lineups",
+        "description": "Melhores posicionamentos para plantas e defuses.",
+        "thumbnail": "/assets/tutorials/viper-lineups.jpg"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "KAY/O",
+    "role": "Initiator",
+    "skills": "Supressão",
+    "dica": "Anule as habilidades inimigas e abra entradas com segurança.",
+    "biography": "KAY/O é uma máquina de guerra construída para neutralizar Radiantes. Ele utiliza pulsos de supressão e granadas para dominar o campo.",
+    "imageKey": "kayo-card",
+    "abilities": [
+      {
+        "name": "FRAG/mento",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 1
+      },
+      {
+        "name": "FLASH/drive",
+        "icon": "fas fa-bolt",
+        "cost": 250,
+        "charges": 2
+      },
+      {
+        "name": "ZERO/ponto",
+        "icon": "fas fa-bolt",
+        "cost": 0,
+        "charges": 1
+      },
+      {
+        "name": "NULL/cmd",
+        "icon": "fas fa-bolt",
+        "cost": 7,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Supressão Tática",
+        "description": "Neutralize inimigos antes da entrada.",
+        "tips": [
+          "Use ZERO/ponto em áreas comuns de ângulo.",
+          "Combine FLASH/drive com rush rápido.",
+          "NULL/cmd permite entrar e suprimir tudo ao redor."
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Push Antihabilidade",
+        "description": "Como tirar poder dos Radiantes com KAY/O.",
+        "thumbnail": "/assets/tutorials/kayo-suppress.jpg"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Astra",
+    "role": "Controller",
+    "skills": "Controle global",
+    "dica": "Use a visão astral para bloquear, prender e desacelerar inimigos.",
+    "biography": "Astra é uma agente de Gana com a habilidade de manipular o campo de batalha em escala cósmica.",
+    "imageKey": "astra-card",
+    "abilities": [
+      {
+        "name": "Poço Gravitacional",
+        "icon": "fas fa-bolt",
+        "cost": 150,
+        "charges": 2
+      },
+      {
+        "name": "Pulso Nova",
+        "icon": "fas fa-bolt",
+        "cost": 150,
+        "charges": 2
+      },
+      {
+        "name": "Nebulosa",
+        "icon": "fas fa-bolt",
+        "cost": 150,
+        "charges": 2
+      },
+      {
+        "name": "Forma Astral / Divisor Cósmico",
+        "icon": "fas fa-bolt",
+        "cost": 7,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Controle à Distância",
+        "description": "Planeje e reaja com precisão global.",
+        "tips": [
+          "Use estrelas no início da rodada para setups completos.",
+          "Combine Poço com entry da sua equipe.",
+          "O ultimate corta toda visão e som."
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Jogando na Visão Astral",
+        "description": "Controle completo do mapa com Astra.",
+        "thumbnail": "/assets/tutorials/astra-control.jpg"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Yoru",
+    "role": "Duelist",
+    "skills": "Engano e infiltração",
+    "dica": "Use sua movimentação para confundir e pegar inimigos de surpresa.",
+    "biography": "Yoru é um infiltrador japonês que manipula o espaço dimensional para enganar e surpreender.",
+    "imageKey": "yoru-card",
+    "abilities": [
+      {
+        "name": "Finta",
+        "icon": "fas fa-bolt",
+        "cost": 100,
+        "charges": 2
+      },
+      {
+        "name": "Invasão Dimensional",
+        "icon": "fas fa-bolt",
+        "cost": 0,
+        "charges": 1
+      },
+      {
+        "name": "Passagem",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 1
+      },
+      {
+        "name": "Espionagem Dimensional",
+        "icon": "fas fa-bolt",
+        "cost": 7,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Engane e Elimine",
+        "description": "Crie confusão e capitalize nos flancos.",
+        "tips": [
+          "Use Finta para simular entradas.",
+          "Passagem pode te reposicionar atrás dos inimigos.",
+          "Use a Ultimate para infiltração total."
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Yoru Avançado",
+        "description": "Domine os truques e mind games.",
+        "thumbnail": "/assets/tutorials/yoru-fakes.jpg"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Harbor",
+    "role": "Controller",
+    "skills": "Água e bloqueio",
+    "dica": "Use barreiras e marés para proteger sua equipe.",
+    "biography": "Harbor, um guerreiro indiano, manipula a água com tecnologia ancestral para controlar o campo de batalha.",
+    "imageKey": "harbor-card",
+    "abilities": [
+      {
+        "name": "Maré Alta",
+        "icon": "fas fa-bolt",
+        "cost": 0,
+        "charges": 1
+      },
+      {
+        "name": "Enseada",
+        "icon": "fas fa-bolt",
+        "cost": 150,
+        "charges": 2
+      },
+      {
+        "name": "Cascata",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 1
+      },
+      {
+        "name": "Dilúvio",
+        "icon": "fas fa-bolt",
+        "cost": 7,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Controle Fluido",
+        "description": "Use paredes móveis para entry e retake.",
+        "tips": [
+          "Use Cascata para cobertura rápida.",
+          "Dilúvio marca inimigos e reduz mobilidade.",
+          "Combine Maré Alta com entrada sincronizada."
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Paredes de Água",
+        "description": "Rotas e bloqueios com Harbor.",
+        "thumbnail": "/assets/tutorials/harbor-walls.jpg"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Gekko",
+    "role": "Initiator",
+    "skills": "Criaturas e combos",
+    "dica": "Use suas criaturas para limpar e dominar território.",
+    "biography": "Gekko, de Los Angeles, comanda um grupo de mascotes únicos que ajudam a equipe de forma ofensiva e estratégica.",
+    "imageKey": "gekko-card",
+    "abilities": [
+      {
+        "name": "Dizzy",
+        "icon": "fas fa-bolt",
+        "cost": 250,
+        "charges": 1
+      },
+      {
+        "name": "Mosh Pit",
+        "icon": "fas fa-bolt",
+        "cost": 250,
+        "charges": 1
+      },
+      {
+        "name": "Wingman",
+        "icon": "fas fa-bolt",
+        "cost": 300,
+        "charges": 1
+      },
+      {
+        "name": "Thrash",
+        "icon": "fas fa-bolt",
+        "cost": 7,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Liderança Animal",
+        "description": "Avance com info e controle.",
+        "tips": [
+          "Wingman pode plantar/desarmar.",
+          "Use Dizzy em entradas para cegar múltiplos.",
+          "Mosh Pit cobre grandes áreas com dano."
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Setup com Mascotes",
+        "description": "Domine o uso das criaturas.",
+        "thumbnail": "/assets/tutorials/gekko-mascotes.jpg"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Deadlock",
+    "role": "Sentinel",
+    "skills": "Controle com armadilhas sonoras",
+    "dica": "Trave o avanço inimigo com precisão e armadilhas.",
+    "biography": "Deadlock é uma especialista norueguesa em contenção, com ferramentas que punem movimentações bruscas.",
+    "imageKey": "deadlock-card",
+    "abilities": [
+      {
+        "name": "Barreira Sônica",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 1
+      },
+      {
+        "name": "Sensor Sônico",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 1
+      },
+      {
+        "name": "Teia",
+        "icon": "fas fa-bolt",
+        "cost": 150,
+        "charges": 2
+      },
+      {
+        "name": "Confinamento Letal",
+        "icon": "fas fa-bolt",
+        "cost": 7,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Contenção Total",
+        "description": "Forçe movimentação ou puna com armadilhas.",
+        "tips": [
+          "Teia é ideal para entradas rápidas.",
+          "Sensor Sônico revela inimigos barulhentos.",
+          "Confinamento pode neutralizar posições seguras."
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Deadlock Defensiva",
+        "description": "Como posicionar cada armadilha com eficiência.",
+        "thumbnail": "/assets/tutorials/deadlock-def.jpg"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Clove",
+    "role": "Controller",
+    "skills": "Revivência e agressividade",
+    "dica": "Use a segunda chance de vida para punir os inimigos.",
+    "biography": "Clove, vinda da Escócia, é uma controladora ousada com a habilidade de retornar à vida temporariamente.",
+    "imageKey": "clove-card",
+    "abilities": [
+      {
+        "name": "Bruma",
+        "icon": "fas fa-bolt",
+        "cost": 150,
+        "charges": 2
+      },
+      {
+        "name": "Vigor",
+        "icon": "fas fa-bolt",
+        "cost": 250,
+        "charges": 1
+      },
+      {
+        "name": "Enfraquecimento",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 1
+      },
+      {
+        "name": "Segunda Chance",
+        "icon": "fas fa-bolt",
+        "cost": 7,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Vida Dupla",
+        "description": "Seja agressivo sabendo que pode voltar à luta.",
+        "tips": [
+          "Use Bruma para cobrir avanço.",
+          "Vigor oferece vida extra no clutch.",
+          "Ultimate te dá uma nova oportunidade no 1vX."
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Retorno à Vida",
+        "description": "Como abusar da Ultimate e pegar de surpresa.",
+        "thumbnail": "/assets/tutorials/clove-revive.jpg"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Iso",
+    "role": "Duelist",
+    "skills": "Duelos 1v1",
+    "dica": "Procure duelos isolados para ativar sua ultimate com eficácia.",
+    "biography": "Iso, um mercenário chinês, manipula energia para enfrentar inimigos em duelos isolados e letais.",
+    "imageKey": "iso-card",
+    "abilities": [
+      {
+        "name": "Reflexão",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 1
+      },
+      {
+        "name": "Muralha de Energia",
+        "icon": "fas fa-bolt",
+        "cost": 150,
+        "charges": 1
+      },
+      {
+        "name": "Pulso de Disrupção",
+        "icon": "fas fa-bolt",
+        "cost": 250,
+        "charges": 1
+      },
+      {
+        "name": "Zona de Confronto",
+        "icon": "fas fa-bolt",
+        "cost": 7,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Confronto Pessoal",
+        "description": "Elimine alvos isolados com vantagem.",
+        "tips": [
+          "Muralha de Energia pode bloquear visão e som.",
+          "Pulso é ótimo para limpar cantos.",
+          "Ultimate força duelo — esteja pronto."
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "1v1 Mortal",
+        "description": "Como dominar duelos com Iso.",
+        "thumbnail": "/assets/tutorials/iso-1v1.jpg"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Wayley",
+    "role": "Duelist",
+    "skills": "Som e manipulação",
+    "dica": "Use suas ondas sonoras para negar visão e dividir espaços.",
+    "biography": "Way é uma agente com sensibilidades auditivas aprimoradas, capaz de controlar o campo com vibrações sonoras e criar barreiras acústicas que confundem seus inimigos.",
+    "imageKey": "wayley-card",
+    "abilities": [
+      {
+        "name": "Eco Pulsante",
+        "icon": "fas fa-bolt",
+        "cost": 200,
+        "charges": 2
+      },
+      {
+        "name": "Barreira Sônica",
+        "icon": "fas fa-bolt",
+        "cost": 150,
+        "charges": 1
+      },
+      {
+        "name": "Fusão Acústica",
+        "icon": "fas fa-bolt",
+        "cost": 250,
+        "charges": 1
+      },
+      {
+        "name": "Campos Vibrantes",
+        "icon": "fas fa-bolt",
+        "cost": 7,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Controle Acústico",
+        "description": "Projete som para controlar entradas e bloquear ângulos críticos.",
+        "tips": [
+          "Use Eco Pulsante para rastrear movimentações por áudio.",
+          "Barreira Sônica impede visão e dificulta defuse.",
+          "Ultimate pressuriza espaço sonoro e prejudica audição inimiga."
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Sam controle de som",
+        "description": "Como usar ondas sonoras para dominar áreas.",
+        "thumbnail": "/assets/tutorials/way-soundcontrol.jpg"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Raze",
+    "role": "Duelist",
+    "skills": "Explosivos e mobilidade",
+    "dica": "Use explosivos para abrir espaço e eliminar múltiplos inimigos.",
+    "biography": "Raze, vinda do Brasil, é especialista em demolição e adora causar caos no campo de batalha. Com seu arsenal de explosivos, ela é perfeita para abrir espaço e garantir eliminações rápidas.",
+    "imageKey": "raze-card",
+    "abilities": [
+      {
+        "name": "Carga de Explosivos",
+        "icon": "fas fa-bomb",
+        "cost": 200,
+        "charges": 2
+      },
+      {
+        "name": "Granada de Fragmentação",
+        "icon": "fas fa-bomb",
+        "cost": 250,
+        "charges": 1
+      },
+      {
+        "name": "Bumba",
+        "icon": "fas fa-robot",
+        "cost": 300,
+        "charges": 1
+      },
+      {
+        "name": "Estrondo Final",
+        "icon": "fas fa-rocket",
+        "cost": 8,
+        "charges": 1,
+        "isUltimate": true
+      }
+    ],
+    "strategies": [
+      {
+        "title": "Entrada Explosiva",
+        "description": "Use suas habilidades para forçar inimigos a sair de posições seguras.",
+        "tips": [
+          "Combine Carga de Explosivos com movimentação agressiva.",
+          "Use a Granada de Fragmentação para limpar cantos.",
+          "O Bumba pode ser usado para obter informação e pressionar inimigos."
+        ]
+      },
+      {
+        "title": "Ultimate Impactante",
+        "description": "O Estrondo Final pode garantir eliminações múltiplas em situações de clutch ou retake.",
+        "tips": [
+          "Use o ultimate em áreas fechadas para maximizar o dano.",
+          "Combine com informações da equipe para pegar inimigos desprevenidos.",
+          "Não tenha medo de usar o Estrondo Final para abrir espaço em rounds decisivos."
+        ]
+      }
+    ],
+    "tutorials": [
+      {
+        "title": "Combos Explosivos",
+        "description": "Aprenda a combinar Carga de Explosivos com Granada de Fragmentação para eliminações rápidas.",
+        "thumbnail": "razeCombo"
+      },
+      {
+        "title": "Domínio do Bumba",
+        "description": "Como usar o Bumba para obter informação e pressionar inimigos.",
+        "thumbnail": "razeBumba"
+      }
+    ]
+  }
+]

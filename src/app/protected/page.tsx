@@ -1,8 +1,13 @@
 import { redirect } from 'next/navigation';
 
+import stylesHero from './components/scss/Hero.module.scss';
+import styles from './page.module.scss';
+
 import { createClient } from '@/src/lib/supabase/server';
-import { InfoIcon } from 'lucide-react';
-import { FetchDataSteps } from '@/src/components/tutorial/fetch-data-steps';
+import yoru from '@/public/yoru.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+
 
 export default async function ProtectedPage() {
 	const supabase = await createClient();
@@ -13,23 +18,30 @@ export default async function ProtectedPage() {
 	}
 
 	return (
-		<div className="flex-1 w-full flex flex-col gap-12">
-			<div className="w-full">
-				<div className="bg-accent text-sm p-3 px-5 rounded-md text-foreground flex gap-3 items-center">
-					<InfoIcon size="16" strokeWidth={2} />
-					This is a protected page that you can only see as an authenticated user
+		<>
+			<section className={`${stylesHero.hero}`} style={{ backgroundImage: `url(${yoru.src})` }}>
+				<div className={`${stylesHero.heroContent}`}>
+					<h1>Domine a Função Dueslita</h1>
+					<p>Aprenda técnicas avançadas com a melhor comunidade de Valorant</p>
+					<button className={`${stylesHero.heroButton}`}>
+						Assistir Agora <FontAwesomeIcon icon={faPlay} />
+					</button>
 				</div>
-			</div>
-			<div className="flex flex-col gap-2 items-start">
-				<h2 className="font-bold text-2xl mb-4">Your user details</h2>
-				<pre className="text-xs font-mono p-3 rounded border max-h-32 overflow-auto">
-					{JSON.stringify(data.claims, null, 2)}
-				</pre>
-			</div>
-			<div>
-				<h2 className="font-bold text-2xl mb-4">Next steps</h2>
-				<FetchDataSteps />
-			</div>
-		</div>
+			</section>
+			<section className={`${styles.lessonsGrid}`}>
+				<h2>Aulas Recomendadas</h2>
+
+				<div className={`${styles.carouselContainer}`}>
+					<button className={`${styles.carouselButton}`} id="prevBtn">
+						<FontAwesomeIcon icon={faChevronLeft} />
+					</button>
+					<div className={`${styles.carouselCards}`} id="cardsCarousel">
+						<div className={`${styles.cardsWrapper}`}>
+							
+						</div>
+					</div>
+				</div>
+			</section>
+		</>
 	);
 }

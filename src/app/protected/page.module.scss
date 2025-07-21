@@ -1,0 +1,39 @@
+.navContainer {
+	padding: 20px 40px;
+}
+
+.searchBar {
+	display: flex;
+	align-items: center;
+	position: relative;
+	flex: 1;
+	max-width: 400px;
+	margin: 0 20px;
+
+	svg {
+		position: absolute;
+		left: 15px;
+		top: 50%;
+		transform: translateY(-50%);
+		color: var(--text-secondary);
+		font-size: 1.5rem;
+		z-index: 1;
+	}
+
+	&:hover {
+		.searchInput {
+			border-color: var(--accent-primary);
+		}
+	}
+}
+
+.searchInput {
+	width: 100%;
+	padding: 12px 20px 12px 45px;
+	border-radius: 30px;
+	border: 1px solid var(--border-color);
+	background-color: var(--bg-input);
+	color: var(--text-primary);
+	font-size: 1rem;
+	transition: all 0.3s;
+}

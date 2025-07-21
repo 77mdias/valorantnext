@@ -2,7 +2,7 @@
   
 # 🎮 NextValorant - Escola de Valorant
 
-<img src="./public/logoPage/Valorant-Academy.jpg" alt="NextValorant Logo" width="200"/>
+<img src="./public/Valorant-Academy.png" alt="NextValorant Logo" width="200"/>
 
 ### 🚀 A melhor plataforma para aprender técnicas avançadas de Valorant
 

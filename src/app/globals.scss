@@ -15,6 +15,8 @@ $whiteblue-gradient: linear-gradient(120deg, #ffffff 0%, #f0f9ff 30%, #e0f2fe 60
 
 body {
 	background: var(--background);
+	height: 100vh;
+	background-repeat: no-repeat;
 	color: var(--foreground);
 }
 
@@ -52,6 +54,9 @@ html {
 		--input: 215 28% 17%;
 		--ring: 263 70% 50%;
 		--radius: 0.5rem;
+
+		//Cores
+		--redcolor: #{$redcolor};
 	}
 
 	.light {
@@ -75,6 +80,9 @@ html {
 		--border: 214 32% 91%;
 		--input: 214 32% 91%;
 		--ring: 263 70% 50%;
+
+		//Cores
+		--redcolor: #{$redcolor};
 	}
 
 	.dark {
@@ -98,6 +106,9 @@ html {
 		--border: 215 28% 17%;
 		--input: 215 28% 17%;
 		--ring: 263 70% 50%;
+
+		//Cores
+		--redcolor: yellow;
 	}
 }
 

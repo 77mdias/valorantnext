@@ -19,28 +19,51 @@ export function SignUpForm({ className, ...props }: React.ComponentPropsWithoutR
 	const [isLoading, setIsLoading] = useState(false);
 	const router = useRouter();
 
+	// Função para lidar com o registro do usuário
 	const handleSignUp = async (e: React.FormEvent) => {
 		e.preventDefault();
 		const supabase = createClient();
 		setIsLoading(true);
 		setError(null);
 
+		// Verifica se as senhas coincidem
 		if (password !== repeatPassword) {
 			setError('Passwords do not match');
 			setIsLoading(false);
 			return;
 		}
 
+		// Tenta registrar o usuário supabase retorna um erro se o email já estiver registrado se der certo ele retorna um objeto com o usuário criado
 		try {
-			const { error } = await supabase.auth.signUp({
+			const { data, error } = await supabase.auth.signUp({
 				email,
 				password,
 				options: {
 					emailRedirectTo: `${window.location.origin}/protected`,
 				},
 			});
-			if (error) throw error;
+			// Faz a verificação se o email já está registrado e envia uma mensagem de erro caso esteja
+			if (error) {
+				if (error.message.includes('already registered')) {
+					setError('Email já registrado');
+				} else {
+					setError('Erro ao registrar usuário, tente novamente');
+				}
+				return;
+			}
+
+			// Se der certo, cria um perfil no banco de dados para o usuário
+			if (!error && data.user) {
+				await supabase.from('profiles').insert({
+					id: data.user.id,
+					email: data.user.email,
+					created_at: new Date().toISOString(),
+				});
+			}
+
+			// Redireciona para a página de sucesso
 			router.push('/auth/sign-up-success');
+			// Se der erro, envia uma mensagem de erro
 		} catch (error: unknown) {
 			setError(error instanceof Error ? error.message : 'An error occurred');
 		} finally {
@@ -102,7 +125,8 @@ export function SignUpForm({ className, ...props }: React.ComponentPropsWithoutR
 							</div>
 							{error && <p className="text-sm text-red-500">{error}</p>}
 							<Button type="submit" className="w-full" disabled={isLoading}>
-								{isLoading ? 'Criando uma conta...' : 'Registrar'}
+								Registrar
+								{isLoading && <span className="ml-2 animate-spin">⏳</span>}
 							</Button>
 						</div>
 						<div className="mt-4 text-center text-sm">
