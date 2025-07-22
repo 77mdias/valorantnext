@@ -15,8 +15,9 @@ $whiteblue-gradient: linear-gradient(120deg, #ffffff 0%, #f0f9ff 30%, #e0f2fe 60
 
 body {
 	background: var(--background);
-	height: 100vh;
 	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 	color: var(--foreground);
 }
 
@@ -29,6 +30,7 @@ body {
 
 html {
 	transition: background-color 0.5s ease;
+	background: var(--background);
 }
 
 @layer base {

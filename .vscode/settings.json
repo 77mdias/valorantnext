@@ -1,0 +1,61 @@
+{
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "theme"
+  ],
+  "tailwindCSS.experimental.classRegex": [
+    [
+      "twMerge\\(([^)]*)\\)",
+      "[\"'`]([^\"'`]*).*?[\"'`]"
+    ],
+    [
+      "createTheme(?:<\\w+>)?\\s*\\(([^)]*)\\)",
+      "{?\\s?[\\w].*:\\s*?[\"'`]([^\"'`]*).*?,?\\s?}?"
+    ]
+  ],
+  "editor.tokenColorCustomizations": {
+    "comments": {
+      "foreground": "#6cff93",
+      "fontStyle": "italic"
+    },
+    "textMateRules": [
+      {
+        "scope": "comment.line",
+        "settings": {
+          "foreground": "#4ECDC4",
+          "fontStyle": "bold italic"
+        }
+      }
+    ]
+  },
+  "todohighlight.keywords": [
+    {
+      "text": "CARDS",
+      "color": "#4ECDC4",
+      "backgroundColor": "transparent",
+      "fontWeight": "bold"
+    },
+    {
+      "text": "BUTTON",
+      "color": "#FFD93D",
+      "backgroundColor": "transparent",
+      "fontWeight": "bold"
+    },
+    {
+      "text": "CAROUSEL",
+      "color": "#6BCF7F",
+      "backgroundColor": "transparent",
+      "fontWeight": "bold"
+    },
+    {
+      "text": "PARA CADA",
+      "color": "#FF6B6B",
+      "backgroundColor": "transparent",
+      "fontWeight": "bold"
+    }
+  ]
+}
