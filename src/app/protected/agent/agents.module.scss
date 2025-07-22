@@ -1,6 +1,7 @@
+// IMPORTS
 @use '../../../scss/utils/responsive' as *;
-@use '../../../scss/utils/variables' as *;
 
+// COMPONENTE PRINCIPAL
 .agentsPage {
 	min-height: 100vh;
 	background: var(--bg-primary);

@@ -1,19 +1,26 @@
 'use client';
+
+// IMPORTS
 import stylesHero from './components/scss/Hero.module.scss';
 import styles from './page.module.scss';
 
+// IMPORTS EXTERNOS
 import { createClient } from '@/src/lib/supabase/client';
 import yoru from '@/public/yoru.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
+// IMPORTS INTERNOS
 import { useEffect, useState, useRef } from 'react';
 import ProtectedCard from './components/ProtectedCard';
 import { useRouter } from 'next/navigation';
 
+// COMPONENTE PRINCIPAL
 export default function ProtectedPage() {
 	console.log('Componente renderizou');
 	const carouselRef = useRef<HTMLDivElement>(null);
+
+	// DADOS DOS AGENTES QUE SERÃO RENDERIZADOS
 	const [agents, setAgents] = useState<
 		{
 			id: number;
@@ -28,8 +35,14 @@ export default function ProtectedPage() {
 			tutorials: string;
 		}[]
 	>([]);
+
+	// ESTADO PARA CARREGAR OS AGENTES
 	const [loading, setLoading] = useState(true);
+
+	// ESTADO PARA O INDICE ATUAL DO CAROUSEL
 	const [currentIndex, setCurrentIndex] = useState(0);
+
+	// ESTADO PARA O NUMERO DE CARDS POR VIEW
 	const [cardsPerView, setCardsPerView] = useState(5);
 	const router = useRouter();
 
@@ -82,14 +95,17 @@ export default function ProtectedPage() {
 		setCurrentIndex(0);
 	}, [cardsPerView]);
 
+	// Função para voltar para o card anterior
 	const goToPrev = () => {
 		setCurrentIndex(prev => Math.max(0, prev - 1));
 	};
 
+	// Função para ir diretamente para um slide específico
 	const goToSlide = (slideIndex: number) => {
 		setCurrentIndex(slideIndex);
 	};
 
+	// Função para avançar para o próximo card
 	const goToNext = () => {
 		setCurrentIndex(prev => {
 			const lastVisibleCard = prev + cardsPerView - 1;

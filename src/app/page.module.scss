@@ -1,5 +1,7 @@
+// IMPORTS
 @use '../scss/utils/responsive' as *;
 
+// COMPONENTE PRINCIPAL
 .btnClass {
 	background: var(--gradient-primary);
 	color: #fff;
