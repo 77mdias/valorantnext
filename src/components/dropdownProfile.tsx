@@ -77,7 +77,7 @@ function DropdownProfile() {
 					</MenuItem>
 					<MenuItem>
 						<a
-							href="/progress"
+							href="/protected/progress"
 							className={`block px-4 py-2 text-base transition-colors duration-200 text-right ${styles.menuItem}`}
 							style={{
 								color: theme === 'light' ? '#1e293b' : '#efeff1',

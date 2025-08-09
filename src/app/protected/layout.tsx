@@ -8,7 +8,7 @@ export default function ProtectedLayout({ children }: { children: React.ReactNod
 			<div className="grid grid-cols-12">
 				<ProtectedNav />
 				<ProtectedAside />
-				<div className="col-span-12 lg:col-span-9  xl:col-span-9 2xl:col-span-10 gap-20">{children}</div>
+				<div className="col-span-12 lg:col-span-9  xl:col-span-10 2xl:col-span-10 gap-20">{children}</div>
 
 				<ProtectedFooter />
 			</div>

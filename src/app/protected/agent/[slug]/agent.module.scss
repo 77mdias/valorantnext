@@ -435,8 +435,17 @@
 	transition: all 0.3s ease;
 }
 
+.tutorialImage {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top;
+	background-repeat: no-repeat;
+}
+
 .playIcon {
 	font-size: 3rem;
+	position: absolute;
 	color: var(--accent-primary);
 	transition: all 0.3s ease;
 }

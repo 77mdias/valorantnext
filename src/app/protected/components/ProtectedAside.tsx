@@ -30,7 +30,7 @@ export default function ProtectedAside() {
 			<div className={`${styles.sidebarOverlay}`} id="sidebarOverlay"></div>
 
 			{/* <!-- Sidebar com botão de fechar --> */}
-			<aside className={`${styles.sidebar} lg:col-span-3 xl:col-span-3 2xl:col-span-2`} id="sidebar">
+			<aside className={`${styles.sidebar} lg:col-span-3 xl:col-span-2 2xl:col-span-2`} id="sidebar">
 				{/* <!-- Botão fechar só aparece em mobile --> */}
 				<button className="close-btn d-lg-none" id="sidebarClose">
 					<i className="fas fa-times"></i>
@@ -43,13 +43,13 @@ export default function ProtectedAside() {
 						<input type="text" placeholder="Buscar..." />
 					</div>
 					<li>
-						<Link href="/" onClick={handleLinkClick}>
+						<Link href="/protected" onClick={handleLinkClick}>
 							<FontAwesomeIcon icon={faHome} />
 							Início
 						</Link>
 					</li>
 					<li>
-						<Link href="/agents" onClick={handleLinkClick}>
+						<Link href="/protected/agent" onClick={handleLinkClick}>
 							<FontAwesomeIcon icon={faUserSecret} />
 							Agentes
 						</Link>

@@ -56,18 +56,55 @@ export default function ProtectedPage() {
 	const calculateTransform = (index: number) => {
 		const maxIndex = agents.length - cardsPerView;
 
-		// Para desktop (5 cards): usar 7200px na posição final como você descobriu
+		// Para desktop (5 cards): lógica simples baseada no DOM real
 		if (cardsPerView === 5) {
-			if (index >= maxIndex) return 7200;
-			const ratio = index / maxIndex;
-			return Math.round(ratio * 7200);
+			const totalCards = agents.length;
+			const maxIndex = totalCards - cardsPerView;
+			
+			// Se estamos no último grupo de cards, calcular o deslocamento exato
+			if (index >= maxIndex) {
+				// Usar o DOM para calcular o deslocamento real necessário
+				if (carouselRef.current) {
+					const cardsWrapper = carouselRef.current.querySelector(`.${styles.cardsWrapper}`);
+					const carouselCards = carouselRef.current.querySelector(`.${styles.carouselCards}`);
+					
+					if (cardsWrapper && carouselCards) {
+						const totalWidth = cardsWrapper.scrollWidth;
+						const visibleWidth = carouselCards.clientWidth;
+						const maxTranslate = Math.max(0, totalWidth - visibleWidth);
+						return maxTranslate;
+					}
+				}
+				// Fallback se não conseguir calcular pelo DOM
+				return index * 340;
+			}
+			
+			// Para posições intermediárias, usar cálculo simples
+			return index * 340;
 		}
 
-		// Para mobile/tablet (2 cards): cálculo proporcional
+		// Para mobile (1 card): cálculo simples
+		if (cardsPerView === 1) {
+			const cardWidth = 165; // Largura do card no mobile
+			const gap = 12; // Gap entre cards no mobile
+			const totalCards = agents.length;
+			const maxTranslate = (totalCards - 1) * (cardWidth + gap);
+
+			const translate = index * (cardWidth + gap);
+			return Math.min(translate, maxTranslate);
+		}
+
+		// Para tablet (2 cards): cálculo proporcional
 		if (cardsPerView === 2) {
-			const cardWidth = window.innerWidth <= 768 ? 165 : 280;
-			const gap = window.innerWidth <= 768 ? 12 : 20;
-			return index * (cardWidth + gap);
+			const cardWidth = 280;
+			const gap = 20;
+			const totalCards = agents.length;
+			const visibleWidth = cardsPerView * cardWidth + (cardsPerView - 1) * gap;
+			const totalWidth = totalCards * cardWidth + (totalCards - 1) * gap;
+			const maxTranslate = totalWidth - visibleWidth;
+
+			const translate = index * (cardWidth + gap);
+			return Math.min(translate, maxTranslate);
 		}
 
 		return index * 300; // Fallback
@@ -77,7 +114,7 @@ export default function ProtectedPage() {
 	useEffect(() => {
 		const handleResize = () => {
 			if (window.innerWidth <= 768) {
-				setCardsPerView(2); // Mobile: 2 cards
+				setCardsPerView(1); // Mobile: 1 card
 			} else if (window.innerWidth <= 1024) {
 				setCardsPerView(2); // Tablet: 2 cards
 			} else {
@@ -155,6 +192,7 @@ export default function ProtectedPage() {
 				}
 			}
 		};
+
 
 		console.log('🔧 Configurando scroll listener');
 		document.addEventListener('wheel', handleWheel, { passive: false });

@@ -220,6 +220,13 @@ export default function AgentPage() {
 								{tutorials.map((tutorial, index) => (
 									<div key={index} className={styles.tutorialCard}>
 										<div className={styles.tutorialThumbnail}>
+											{/* É SÓ UM AVISO DO ESLINT PARA NÃO USAR IMG, MAS É O MELHOR JEITO DE FAZER */}
+											{/* eslint-disable-next-line @next/next/no-img-element */}
+											<img
+												src={`/tutorials/${tutorial.thumbnail}.jpg`}
+												alt={tutorial.title}
+												className={styles.tutorialImage}
+											/>
 											<FontAwesomeIcon icon={faPlay} className={styles.playIcon} />
 										</div>
 										<div className={styles.tutorialInfo}>
