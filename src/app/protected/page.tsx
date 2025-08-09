@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 // IMPORTS INTERNOS
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import ProtectedCard from './components/ProtectedCard';
 import { useRouter } from 'next/navigation';
 
@@ -54,20 +54,17 @@ export default function ProtectedPage() {
 
 	// Transform corrigido baseado na sua descoberta: 7200px funciona para mostrar Raze
 	const calculateTransform = (index: number) => {
-		const maxIndex = agents.length - cardsPerView;
-
-		// Para desktop (5 cards): lógica simples baseada no DOM real
+		// Para desktop (5 cards): lógica baseada no DOM real
 		if (cardsPerView === 5) {
 			const totalCards = agents.length;
-			const maxIndex = totalCards - cardsPerView;
-			
+			const lastIndex = totalCards - cardsPerView;
+
 			// Se estamos no último grupo de cards, calcular o deslocamento exato
-			if (index >= maxIndex) {
-				// Usar o DOM para calcular o deslocamento real necessário
+			if (index >= lastIndex) {
 				if (carouselRef.current) {
-					const cardsWrapper = carouselRef.current.querySelector(`.${styles.cardsWrapper}`);
-					const carouselCards = carouselRef.current.querySelector(`.${styles.carouselCards}`);
-					
+					const cardsWrapper = carouselRef.current.querySelector(`.${styles.cardsWrapper}`) as HTMLElement | null;
+					const carouselCards = carouselRef.current.querySelector(`.${styles.carouselCards}`) as HTMLElement | null;
+
 					if (cardsWrapper && carouselCards) {
 						const totalWidth = cardsWrapper.scrollWidth;
 						const visibleWidth = carouselCards.clientWidth;
@@ -78,23 +75,22 @@ export default function ProtectedPage() {
 				// Fallback se não conseguir calcular pelo DOM
 				return index * 340;
 			}
-			
-			// Para posições intermediárias, usar cálculo simples
+
+			// Para posições intermediárias
 			return index * 340;
 		}
 
-		// Para mobile (1 card): cálculo simples
+		// Para mobile (1 card)
 		if (cardsPerView === 1) {
-			const cardWidth = 165; // Largura do card no mobile
-			const gap = 12; // Gap entre cards no mobile
+			const cardWidth = 165;
+			const gap = 12;
 			const totalCards = agents.length;
 			const maxTranslate = (totalCards - 1) * (cardWidth + gap);
-
 			const translate = index * (cardWidth + gap);
 			return Math.min(translate, maxTranslate);
 		}
 
-		// Para tablet (2 cards): cálculo proporcional
+		// Para tablet (2 cards)
 		if (cardsPerView === 2) {
 			const cardWidth = 280;
 			const gap = 20;
@@ -102,12 +98,12 @@ export default function ProtectedPage() {
 			const visibleWidth = cardsPerView * cardWidth + (cardsPerView - 1) * gap;
 			const totalWidth = totalCards * cardWidth + (totalCards - 1) * gap;
 			const maxTranslate = totalWidth - visibleWidth;
-
 			const translate = index * (cardWidth + gap);
 			return Math.min(translate, maxTranslate);
 		}
 
-		return index * 300; // Fallback
+		// Fallback
+		return index * 300;
 	};
 
 	// Hook para detectar tamanho da tela
@@ -133,9 +129,9 @@ export default function ProtectedPage() {
 	}, [cardsPerView]);
 
 	// Função para voltar para o card anterior
-	const goToPrev = () => {
+	const goToPrev = useCallback(() => {
 		setCurrentIndex(prev => Math.max(0, prev - 1));
-	};
+	}, []);
 
 	// Função para ir diretamente para um slide específico
 	const goToSlide = (slideIndex: number) => {
@@ -143,18 +139,13 @@ export default function ProtectedPage() {
 	};
 
 	// Função para avançar para o próximo card
-	const goToNext = () => {
+	const goToNext = useCallback(() => {
 		setCurrentIndex(prev => {
 			const lastVisibleCard = prev + cardsPerView - 1;
 			const lastCardIndex = agents.length - 1;
-
-			if (lastVisibleCard < lastCardIndex) {
-				return prev + 1;
-			}
-
-			return prev; // Já no final
+			return lastVisibleCard < lastCardIndex ? prev + 1 : prev;
 		});
-	};
+	}, [agents.length, cardsPerView]);
 
 	// Adicionar scroll do mouse no carousel
 	useEffect(() => {

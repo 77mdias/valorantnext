@@ -2,11 +2,29 @@
 
 import { useState, FormEvent } from 'react';
 
+type AccountDTO = { puuid: string; gameName: string; tagLine: string };
+type MatchHistoryItem = { matchId: string; gameStartTimeMillis: number; queueId: string };
+type MatchlistDTO = { history?: MatchHistoryItem[] };
+type PlayerResponse = {
+  account: AccountDTO;
+  matchlist: MatchlistDTO | null;
+  region: string;
+  // matchlistError?: { status: number; detail?: string; regionTried?: string } // se você voltar a usar
+};
+type ApiError = { error: string; detail?: string };
+
+function isApiError(x: unknown): x is ApiError {
+  return !!x && typeof x === 'object' && 'error' in x;
+}
+function isPlayerResponse(x: unknown): x is PlayerResponse {
+  return !!x && typeof x === 'object' && 'account' in x;
+}
+
 export default function ProgressSection() {
   const [riotId, setRiotId] = useState('');
-  const [region, setRegion] = useState('br'); // opcional: selecionar região de VAL
+  const [region, setRegion] = useState('br');
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<PlayerResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   async function onSubmit(e: FormEvent) {
@@ -24,13 +42,16 @@ export default function ProgressSection() {
     try {
       const url = `/api/valorant/player?riotId=${encodeURIComponent(value)}&region=${encodeURIComponent(region)}`;
       const res = await fetch(url);
-      const json = await res.json();
-      if (!res.ok || json?.error) {
-        setError(json?.error || 'Erro ao buscar jogador');
-      } else {
+      const json: unknown = await res.json();
+
+      if (!res.ok || isApiError(json)) {
+        setError(isApiError(json) ? json.error : 'Erro ao buscar jogador');
+      } else if (isPlayerResponse(json)) {
         setData(json);
+      } else {
+        setError('Resposta inesperada da API');
       }
-    } catch (err: any) {
+    } catch {
       setError('Erro de rede');
     } finally {
       setLoading(false);
@@ -78,7 +99,7 @@ export default function ProgressSection() {
             <>
               <h3 style={{ marginTop: 12 }}>Partidas Recentes</h3>
               <ul>
-                {data.matchlist.history?.slice(0, 10).map((m: any) => (
+                {data.matchlist.history?.slice(0, 10).map((m: MatchHistoryItem) => (
                   <li key={m.matchId}>
                     {m.queueId} — {new Date(m.gameStartTimeMillis).toLocaleString()} — {m.matchId}
                   </li>
@@ -88,14 +109,13 @@ export default function ProgressSection() {
           ) : (
             <p style={{ marginTop: 8 }}>Sem partidas recentes ou não foi possível obter o histórico.</p>
           )}
-          {data?.matchlistError && (
+          {/* Se voltar a expor matchlistError na rota, reative abaixo */}
+          {/* {data?.matchlistError && (
             <details style={{ marginTop: 8 }}>
               <summary>Detalhes do erro de matchlist</summary>
-              <pre style={{ whiteSpace: 'pre-wrap' }}>
-                {JSON.stringify(data.matchlistError, null, 2)}
-              </pre>
+              <pre style={{ whiteSpace: 'pre-wrap' }}>{JSON.stringify(data.matchlistError, null, 2)}</pre>
             </details>
-          )}
+          )} */}
         </div>
       )}
     </section>

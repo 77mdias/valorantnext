@@ -1,5 +1,22 @@
 import { NextResponse } from 'next/server';
 
+// Tipos simples para a resposta da Riot
+type AccountDTO = {
+  puuid: string;
+  gameName: string;
+  tagLine: string;
+};
+
+type MatchHistoryItem = {
+  matchId: string;
+  gameStartTimeMillis: number;
+  queueId: string;
+};
+
+type MatchlistDTO = {
+  history?: MatchHistoryItem[];
+};
+
 function parseRiotId(riotId: string) {
   const idx = riotId.indexOf('#');
   if (idx === -1) return null;
@@ -15,8 +32,8 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: 'RIOT_API_KEY ausente' }, { status: 500 });
   }
 
-  const accountRegionGroup = process.env.RIOT_ACCOUNT_REGION_GROUP || 'americas'; // americas | europe | asia
-  const defaultValRegion = process.env.VAL_REGION || 'br'; // na, eu, ap, kr, latam, br
+  const accountRegionGroup = process.env.RIOT_ACCOUNT_REGION_GROUP || 'americas';
+  const defaultValRegion = process.env.VAL_REGION || 'br';
 
   const { searchParams } = new URL(req.url);
   const riotId = (searchParams.get('riotId') || '').trim();
@@ -43,7 +60,7 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: 'Falha ao buscar conta', detail }, { status: accountRes.status });
   }
 
-  const account = await accountRes.json();
+  const account = (await accountRes.json()) as AccountDTO;
 
   const matchlistUrl = `https://${valRegion}.api.riotgames.com/val/match/v1/matchlists/by-puuid/${encodeURIComponent(account.puuid)}`;
   const matchlistRes = await fetch(matchlistUrl, {
@@ -51,9 +68,9 @@ export async function GET(req: Request) {
     next: { revalidate: 60 },
   });
 
-  let matchlist: any = null;
+  let matchlist: MatchlistDTO | null = null;
   if (matchlistRes.ok) {
-    matchlist = await matchlistRes.json();
+    matchlist = (await matchlistRes.json()) as MatchlistDTO;
   } else if (matchlistRes.status !== 404) {
     const detail = await matchlistRes.text();
     return NextResponse.json({ error: 'Falha ao buscar matchlist', detail }, { status: matchlistRes.status });
