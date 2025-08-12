@@ -1,4 +1,27 @@
-import { PlayerProgress, PlayerResponse, MatchSummary, MapStat} from '../types/valorant';
+import { PlayerProgress, MatchSummary, MapStat} from '../types/valorant';
+
+// Função para gerar partidas mockadas
+function generateMockMatches() {
+  const matches = [];
+  const now = Date.now();
+  
+  for (let i = 0; i < 15; i++) {
+    matches.push({
+      matchId: `mock-match-${i}-${Math.random().toString(36).substr(2, 9)}`,
+      gameStartTimeMillis: now - (i * 24 * 60 * 60 * 1000), // 1 dia atrás para cada partida
+      queueId: i < 10 ? 'competitive' : 'unrated'
+    });
+  }
+  
+  return matches;
+}
+
+// Função para gerar rank baseado no nome (determinístico)
+function generateRandomRank(name: string): string {
+  const ranks = ['Iron', 'Bronze', 'Silver', 'Gold', 'Platinum', 'Diamond', 'Ascendant', 'Immortal'];
+  const hash = name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  return ranks[hash % ranks.length];
+}
 
 
 /**
@@ -7,14 +30,15 @@ import { PlayerProgress, PlayerResponse, MatchSummary, MapStat} from '../types/v
  */
 export async function getPlayerProgress(riotName: string, tag: string): Promise<PlayerProgress | null> {
   try {
-    // Buscar dados usando a API existente
-    const response = await fetch(`/api/valorant/player?riotId=${encodeURIComponent(`${riotName}#${tag}`)}&region=br`);
+    // Para portfólio: sempre retorna dados mockados (sem chamada à API real)
+    // Simula delay de rede
+    await new Promise(resolve => setTimeout(resolve, 1500));
     
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    
-    const playerData: PlayerResponse = await response.json();
+    // Dados simulados baseados no input do usuário
+    const playerData = {
+      account: { gameName: riotName, tagLine: tag },
+      matchlist: { history: generateMockMatches() }
+    };
     
     // Simular dados de progresso baseados nos dados disponíveis
     // Em uma implementação real, estes dados viriam de APIs específicas do Valorant
@@ -22,12 +46,12 @@ export async function getPlayerProgress(riotName: string, tag: string): Promise<
       riotName: playerData.account.gameName,
       tag: playerData.account.tagLine,
       
-      // Dados de rank simulados - em produção viriam da API de MMR/Rank
+      // Dados de rank simulados - variação baseada no nome do jogador
       rank: {
-        tier: 'Ascendant',
-        division: '2',
-        rr: 78,
-        elo: 2178,
+        tier: generateRandomRank(riotName),
+        division: Math.floor(Math.random() * 3) + 1,
+        rr: Math.floor(Math.random() * 100),
+        elo: 1500 + Math.floor(Math.random() * 1000),
         season: 'E8A3',
         peak: {
           tier: 'Immortal',
@@ -38,11 +62,11 @@ export async function getPlayerProgress(riotName: string, tag: string): Promise<
       
       // Overview calculado com base nas partidas (simulado)
       overview: {
-        winRate: 64,
-        kd: 1.23,
-        hsPercent: 21,
+        winRate: 45 + Math.floor(Math.random() * 30), // 45-75%
+        kd: 0.8 + Math.random() * 0.8, // 0.8-1.6
+        hsPercent: 15 + Math.floor(Math.random() * 15), // 15-30%
         totalMatches: playerData.matchlist?.history?.length || 87,
-        playtimeHours: 156
+        playtimeHours: 100 + Math.floor(Math.random() * 200)
       },
       
       // Sequências simuladas
