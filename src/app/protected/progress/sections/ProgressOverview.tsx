@@ -34,9 +34,14 @@ interface ProgressOverviewProps {
 
 export default function ProgressOverview({ playerData, isLoading = false }: ProgressOverviewProps) {
   // Dados de fallback para quando não há dados
-  const defaultData = {
-    rank: { tier: 'Unranked', rr: 0 },
-    overview: { winRate: 0, kd: 0, hsPercent: 0, totalMatches: 0 }
+  const defaultData: PlayerProgress = {
+    riotName: 'Unknown',
+    tag: '0000',
+    rank: { tier: 'Unranked', division: undefined, rr: 0, elo: 0, season: 'E8A3' },
+    overview: { winRate: 0, kd: 0, hsPercent: 0, totalMatches: 0 },
+    agents: [],
+    maps: [],
+    recentMatches: []
   };
 
   const data = playerData || defaultData;
