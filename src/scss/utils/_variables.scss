@@ -1,3 +1,5 @@
+@use '../../styles/_tokens' as *;
+
 // Cores estilo Twitch
 $twitch-purple: #9146ff;
 $twitch-dark: #0e0e10;
@@ -59,4 +61,33 @@ $redcolor: #ff0080;
 	--shadow-lg: rgba(0, 0, 0, 0.5);
 	--gradient-primary: #{$purple-gradient};
 	--logo-filter: none;
+
+	// Cards
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-bg-hover: rgba(255, 255, 255, 0.08);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-radius: #{$card-radius};
+  --card-shadow: #{$card-shadow};
+  --card-shadow-hover: #{$card-shadow-hover};
+
+  // Cores de progresso
+  --progress-accent: #{$progress-accent};
+  --progress-success: #{$progress-success};
+  --progress-warning: #{$progress-warning};
+  --progress-danger: #{$progress-danger};
+  --progress-info: #{$progress-info};
+
+  // Texto
+  --text-value: var(--text-primary);
+  --text-label: var(--text-secondary);
+  --text-subtitle: var(--text-muted);
+
+  // Espaçamentos
+  --spacing-card: #{$card-padding};
+  --spacing-card-sm: #{$card-padding-sm};
+  --grid-gap: #{$grid-gap};
+
+  // Transições
+  --transition-fast: #{$transition-fast};
+  --transition-normal: #{$transition-normal};
 }

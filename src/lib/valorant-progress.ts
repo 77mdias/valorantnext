@@ -1,4 +1,5 @@
-import { PlayerProgress, PlayerResponse, MatchSummary, AgentStat, MapStat, PlayerStreaks } from '../types/valorant';
+import { PlayerProgress, PlayerResponse, MatchSummary, MapStat} from '../types/valorant';
+
 
 /**
  * Converte dados da API atual para o formato PlayerProgress
@@ -95,7 +96,7 @@ export async function getPlayerProgress(riotName: string, tag: string): Promise<
 /**
  * Converte o histórico de partidas da API para MatchSummary[]
  */
-function convertMatchHistory(history: any[]): MatchSummary[] {
+function convertMatchHistory(history: Array<{ matchId: string; gameStartTimeMillis: number; queueId: string }>): MatchSummary[] {
   // Agentes simulados para as partidas
   const agents = ['Jett', 'Reyna', 'Phoenix', 'Sage', 'Omen', 'Sova', 'Breach', 'Cypher'];
   const maps = ['Ascent', 'Bind', 'Haven', 'Split', 'Icebox', 'Breeze', 'Fracture', 'Pearl'];
