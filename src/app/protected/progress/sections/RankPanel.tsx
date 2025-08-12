@@ -75,10 +75,14 @@ export default function RankPanel({ rankInfo, isLoading = false }: RankPanelProp
   const progressPercent = Math.min((currentRR / 100) * 100, 100);
   const rrToNext = Math.max(100 - currentRR, 0);
   
-  const rankDisplay = rankInfo.tier;
+  const rankDisplay = rankInfo.division 
+    ? `${rankInfo.tier} ${rankInfo.division}`
+    : rankInfo.tier;
 
   const peakDisplay = rankInfo.peak?.tier
-    ? rankInfo.peak.tier
+    ? rankInfo.peak.division 
+      ? `${rankInfo.peak.tier} ${rankInfo.peak.division}`
+      : rankInfo.peak.tier
     : null;
 
   return (

@@ -42,7 +42,9 @@ export default function ProgressOverview({ playerData, isLoading = false }: Prog
   const data = playerData || defaultData;
   
   // Formatação dos valores
-  const rankDisplay = data.rank.tier;
+  const rankDisplay = data.rank.division 
+    ? `${data.rank.tier} ${data.rank.division}`
+    : data.rank.tier;
   
   const rankSubtitle = data.rank.rr > 0 ? `${data.rank.rr} RR` : '';
   const winRateDisplay = `${Math.round(data.overview.winRate)}%`;
