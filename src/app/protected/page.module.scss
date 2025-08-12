@@ -115,26 +115,8 @@
 		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 		cursor: grab;
 
-		&::before {
-			content: '🖱️ Scroll do mouse ativo';
-			position: absolute;
-			top: -40px;
-			left: 50%;
-			transform: translateX(-50%);
-			background: var(--accent-primary);
-			color: white;
-			padding: 8px 16px;
-			border-radius: 8px;
-			font-size: 0.8rem;
-			font-weight: 500;
-			white-space: nowrap;
-			opacity: 0;
-			animation: showScrollHint 0.3s ease-out 1s both;
-			pointer-events: none;
-			z-index: 1000;
-			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-		}
-
+		
+    // TOOLTIP PARA SCROLL
 		&::after {
 			content: '🖱️ Use o scroll do mouse para navegar';
 			position: absolute;

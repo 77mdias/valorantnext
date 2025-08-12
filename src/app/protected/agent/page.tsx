@@ -73,9 +73,10 @@ export default function AgentsPage() {
 				{/* Grid de agentes */}
 				<div className={styles.agentsGrid}>
 					{filteredAgents.map(agent => (
-						<Link key={agent.id} href={`/protected/agent/${agent.name.toLowerCase()}`} className={styles.agentCard}>
+						// AQUI O LINK DEVIA SEGUIR A PÁGINA DO AGENTE PELO NUMERO DO ID
+						<Link key={agent.id} href={`/protected/agent/${agent.id}`} className={styles.agentCard}>
 							<div className={styles.agentImageWrapper}>
-								<AgentImage imageKey={agent.imagekey} alt={agent.name} width={280} height={350} priority={false} />
+								<AgentImage imageKey={agent.imagekey} alt={agent.name} width={280} height={350} priority={false} className={styles.agentImage} />
 								<div className={styles.agentRole}>{agent.role}</div>
 							</div>
 							<div className={styles.agentInfo}>

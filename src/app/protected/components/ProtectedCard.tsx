@@ -35,7 +35,7 @@ function ProtectedCard({ agent, isActive, onClick }: ProtectedCardProps) {
 				</button>
 			</div>
 			<div className={`${styles.cardContent}`}>
-				<div className={`${styles.cardName}`}>{agent.name}</div>
+				
 				<div className={`${styles.cardSkills}`}>
 					<h3>{agent.skills}</h3>
 					<p>{agent.dica}</p>

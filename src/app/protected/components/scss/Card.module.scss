@@ -39,6 +39,7 @@
 	overflow: hidden;
 
 	.difficulty {
+		background-color: rgba(255, 179, 231, 0.14);
 		position: absolute;
 		top: 12px;
 		right: 12px;
@@ -117,7 +118,7 @@
 	}
 
 	&:hover {
-		transform: scale(1.08) translateY(-8px);
+		transform: scale(1.04) translateY(-4px);
 	}
 }
 

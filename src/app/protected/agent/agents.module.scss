@@ -167,11 +167,20 @@
 }
 
 .agentImageWrapper {
+	background-size: cover;
+	background-position: center;
 	position: relative;
-	aspect-ratio: 4/5;
+	width: 100%;
 	overflow: hidden;
-	transition: transform 0.3s ease;
 }
+
+.agentImage {
+ 	height: 12rem;
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
+	transition: all 0.3s ease;
+}	
 
 .agentRole {
 	position: absolute;
@@ -214,4 +223,19 @@
 		font-size: 1.1rem;
 		opacity: 0.7;
 	}
+}
+
+.agentCard {
+	text-align: start;
+	flex: 0 0 auto; // Não permite encolher
+	max-width: 20rem; // Largura fixa
+	max-height: 25rem;
+	background: var(--bg-card);
+	border-radius: 12px;
+	overflow: hidden;
+	transition: all 0.3s ease;
+	position: relative;
+	box-shadow: 0 4px 12px var(--shadow-md);
+	border: 1px solid var(--border-color);
+	user-select: none;
 }
