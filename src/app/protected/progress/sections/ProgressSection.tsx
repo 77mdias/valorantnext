@@ -1,36 +1,25 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
-
-type AccountDTO = { puuid: string; gameName: string; tagLine: string };
-type MatchHistoryItem = { matchId: string; gameStartTimeMillis: number; queueId: string };
-type MatchlistDTO = { history?: MatchHistoryItem[] };
-type PlayerResponse = {
-  account: AccountDTO;
-  matchlist: MatchlistDTO | null;
-  region: string;
-  // matchlistError?: { status: number; detail?: string; regionTried?: string } // se você voltar a usar
-};
-type ApiError = { error: string; detail?: string };
-
-function isApiError(x: unknown): x is ApiError {
-  return !!x && typeof x === 'object' && 'error' in x;
-}
-function isPlayerResponse(x: unknown): x is PlayerResponse {
-  return !!x && typeof x === 'object' && 'account' in x;
-}
+import { PlayerProgress } from '../../../../types/valorant';
+import { getPlayerProgress } from '../../../../lib/valorant-progress';
+import ProgressOverview from './ProgressOverview';
+import RankPanel from './RankPanel';
+import Streaks from './Streaks';
+import MatchHistory from './MatchHistory';
+import styles from './ProgressSection.module.scss';
 
 export default function ProgressSection() {
   const [riotId, setRiotId] = useState('');
   const [region, setRegion] = useState('br');
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState<PlayerResponse | null>(null);
+  const [playerData, setPlayerData] = useState<PlayerProgress | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
     setError(null);
-    setData(null);
+    setPlayerData(null);
 
     const value = riotId.trim();
     if (!value.includes('#')) {
@@ -38,86 +27,121 @@ export default function ProgressSection() {
       return;
     }
 
+    const [riotName, tag] = value.split('#');
+    if (!riotName || !tag) {
+      setError('Use o formato Nome#TAG');
+      return;
+    }
+
     setLoading(true);
     try {
-      const url = `/api/valorant/player?riotId=${encodeURIComponent(value)}&region=${encodeURIComponent(region)}`;
-      const res = await fetch(url);
-      const json: unknown = await res.json();
-
-      if (!res.ok || isApiError(json)) {
-        setError(isApiError(json) ? json.error : 'Erro ao buscar jogador');
-      } else if (isPlayerResponse(json)) {
-        setData(json);
+      const progress = await getPlayerProgress(riotName, tag);
+      
+      if (progress) {
+        setPlayerData(progress);
       } else {
-        setError('Resposta inesperada da API');
+        setError('Não foi possível carregar os dados do jogador');
       }
-    } catch {
-      setError('Erro de rede');
+    } catch (err) {
+      console.error('Erro ao buscar progresso:', err);
+      setError('Erro ao buscar dados do jogador');
     } finally {
       setLoading(false);
     }
   }
 
   return (
-    <section>
-      <h2>Visão Geral do Progresso</h2>
-
-      <form onSubmit={onSubmit} style={{ display: 'flex', gap: 8, alignItems: 'center', marginTop: 12 }}>
-        <input
-          type="text"
-          placeholder="Riot ID (ex.: Nome#TAG)"
-          value={riotId}
-          onChange={(e) => setRiotId(e.target.value)}
-          required
-          style={{ padding: 8, minWidth: 260 }}
-        />
-        <select value={region} onChange={(e) => setRegion(e.target.value)} style={{ padding: 8 }}>
-          <option value="br">BR</option>
-          <option value="latam">LATAM</option>
-          <option value="na">NA</option>
-          <option value="eu">EU</option>
-          <option value="ap">AP</option>
-          <option value="kr">KR</option>
-        </select>
-        <button type="submit" disabled={loading} style={{ padding: '8px 12px' }}>
-          {loading ? 'Buscando...' : 'Buscar'}
-        </button>
-      </form>
-
-      {error && <p style={{ color: 'tomato', marginTop: 8 }}>{error}</p>}
-
-      {data && (
-        <div style={{ marginTop: 16 }}>
-          <h3>Conta</h3>
-          <p>
-            {data.account?.gameName}#{data.account?.tagLine}
+    <div className={styles.progressSection}>
+      {/* Formulário de busca */}
+      <section className={styles.searchSection}>
+        <div className={styles.searchHeader}>
+          <h2 className={styles.title}>Análise de Desempenho</h2>
+          <p className={styles.subtitle}>
+            Digite seu Riot ID para ver estatísticas detalhadas do seu progresso no Valorant
           </p>
-          <p>puuid: {data.account?.puuid}</p>
-          <p>Região VAL: {data.region}</p>
+        </div>
 
-          {data.matchlist ? (
-            <>
-              <h3 style={{ marginTop: 12 }}>Partidas Recentes</h3>
-              <ul>
-                {data.matchlist.history?.slice(0, 10).map((m: MatchHistoryItem) => (
-                  <li key={m.matchId}>
-                    {m.queueId} — {new Date(m.gameStartTimeMillis).toLocaleString()} — {m.matchId}
-                  </li>
-                ))}
-              </ul>
-            </>
-          ) : (
-            <p style={{ marginTop: 8 }}>Sem partidas recentes ou não foi possível obter o histórico.</p>
-          )}
-          {/* Se voltar a expor matchlistError na rota, reative abaixo */}
-          {/* {data?.matchlistError && (
-            <details style={{ marginTop: 8 }}>
-              <summary>Detalhes do erro de matchlist</summary>
-              <pre style={{ whiteSpace: 'pre-wrap' }}>{JSON.stringify(data.matchlistError, null, 2)}</pre>
-            </details>
-          )} */}
+        <form onSubmit={onSubmit} className={styles.searchForm}>
+          <div className={styles.inputGroup}>
+            <input
+              type="text"
+              placeholder="Riot ID (ex.: Nome#TAG)"
+              value={riotId}
+              onChange={(e) => setRiotId(e.target.value)}
+              required
+              className={styles.input}
+            />
+            <select 
+              value={region} 
+              onChange={(e) => setRegion(e.target.value)} 
+              className={styles.select}
+            >
+              <option value="br">BR</option>
+              <option value="latam">LATAM</option>
+              <option value="na">NA</option>
+              <option value="eu">EU</option>
+              <option value="ap">AP</option>
+              <option value="kr">KR</option>
+            </select>
+            <button 
+              type="submit" 
+              disabled={loading} 
+              className={styles.button}
+            >
+              {loading ? 'Analisando...' : 'Analisar'}
+            </button>
+          </div>
+        </form>
+
+        {error && (
+          <div className={styles.error}>
+            <p>{error}</p>
+          </div>
+        )}
+      </section>
+
+      {/* Dados do jogador */}
+      {(loading || playerData) && (
+        <div className={styles.playerData}>
+          {/* Cards de visão geral */}
+          <ProgressOverview 
+            playerData={playerData || undefined} 
+            isLoading={loading} 
+          />
+          
+          {/* Painel de rank */}
+          <RankPanel 
+            rankInfo={playerData?.rank} 
+            isLoading={loading} 
+          />
+          
+          {/* Sequências */}
+          <Streaks 
+            streaks={playerData?.streaks} 
+            isLoading={loading} 
+          />
+          
+          {/* Histórico de partidas */}
+          <MatchHistory 
+            matches={playerData?.recentMatches} 
+            isLoading={loading}
+            limit={8}
+          />
         </div>
       )}
-    </section>
+      
+      {/* Estado inicial - sem dados */}
+      {!loading && !playerData && !error && (
+        <div className={styles.emptyState}>
+          <div className={styles.emptyIcon}>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+          </div>
+          <h3>Pronto para analisar seu desempenho?</h3>
+          <p>Digite seu Riot ID acima para ver estatísticas detalhadas, histórico de partidas, ranking atual e muito mais.</p>
+        </div>
+      )}
+    </div>
   );
 }

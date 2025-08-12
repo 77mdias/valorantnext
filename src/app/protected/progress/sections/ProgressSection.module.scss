@@ -1,0 +1,245 @@
+@use '../../../../styles/tokens' as tokens;
+
+.progressSection {
+  min-height: 100vh;
+  padding: tokens.$spacing-xl tokens.$spacing-md;
+  max-width: tokens.$container-max-width;
+  margin: 0 auto;
+}
+
+// Seção de busca
+.searchSection {
+  text-align: center;
+  margin-bottom: tokens.$spacing-2xl;
+}
+
+.searchHeader {
+  margin-bottom: tokens.$spacing-xl;
+}
+
+.title {
+  font-size: tokens.$font-size-3xl;
+  font-weight: tokens.$font-weight-bold;
+  color: var(--text-primary);
+  margin: 0 0 tokens.$spacing-md 0;
+  
+  @media (max-width: tokens.$breakpoint-sm) {
+    font-size: tokens.$font-size-2xl;
+  }
+}
+
+.subtitle {
+  font-size: tokens.$font-size-lg;
+  color: var(--text-secondary);
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+  
+  @media (max-width: tokens.$breakpoint-sm) {
+    font-size: tokens.$font-size-base;
+  }
+}
+
+// Formulário de busca
+.searchForm {
+  display: flex;
+  justify-content: center;
+  margin-bottom: tokens.$spacing-lg;
+}
+
+.inputGroup {
+  display: flex;
+  gap: tokens.$spacing-sm;
+  align-items: center;
+  background: var(--card-bg);
+  padding: tokens.$spacing-sm;
+  border-radius: var(--card-radius);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  max-width: 600px;
+  width: 100%;
+  
+  @media (max-width: tokens.$breakpoint-sm) {
+    flex-direction: column;
+    gap: tokens.$spacing-md;
+    padding: tokens.$spacing-md;
+  }
+}
+
+.input {
+  flex: 1;
+  padding: tokens.$spacing-sm tokens.$spacing-md;
+  border: 1px solid var(--card-border);
+  border-radius: tokens.$card-radius-sm;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  font-size: tokens.$font-size-base;
+  transition: all var(--transition-normal);
+  min-width: 200px;
+  
+  &::placeholder {
+    color: var(--text-muted);
+  }
+  
+  &:focus {
+    outline: none;
+    border-color: var(--progress-accent);
+    box-shadow: 0 0 0 2px rgba(145, 70, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+  }
+  
+  @media (max-width: tokens.$breakpoint-sm) {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+.select {
+  padding: tokens.$spacing-sm tokens.$spacing-md;
+  border: 1px solid var(--card-border);
+  border-radius: tokens.$card-radius-sm;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  font-size: tokens.$font-size-base;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  
+  &:focus {
+    outline: none;
+    border-color: var(--progress-accent);
+    box-shadow: 0 0 0 2px rgba(145, 70, 255, 0.2);
+  }
+  
+  option {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+  }
+  
+  @media (max-width: tokens.$breakpoint-sm) {
+    width: 100%;
+  }
+}
+
+.button {
+  padding: tokens.$spacing-sm tokens.$spacing-lg;
+  background: var(--progress-accent);
+  color: white;
+  border: none;
+  border-radius: tokens.$card-radius-sm;
+  font-size: tokens.$font-size-base;
+  font-weight: tokens.$font-weight-semibold;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+  
+  &:hover:not(:disabled) {
+    background: #7c3aed;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(145, 70, 255, 0.4);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  @media (max-width: tokens.$breakpoint-sm) {
+    width: 100%;
+  }
+}
+
+// Estado de erro
+.error {
+  background: rgba(255, 70, 85, 0.1);
+  border: 1px solid rgba(255, 70, 85, 0.3);
+  border-radius: var(--card-radius);
+  padding: tokens.$spacing-md;
+  margin-top: tokens.$spacing-md;
+  
+  p {
+    color: var(--progress-danger);
+    margin: 0;
+    font-size: tokens.$font-size-sm;
+    font-weight: tokens.$font-weight-medium;
+  }
+}
+
+// Dados do jogador
+.playerData {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+// Estado vazio
+.emptyState {
+  text-align: center;
+  padding: tokens.$spacing-2xl;
+  color: var(--text-muted);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.emptyIcon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto tokens.$spacing-lg auto;
+  color: var(--text-secondary);
+  opacity: 0.6;
+  
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.emptyState h3 {
+  font-size: tokens.$font-size-xl;
+  color: var(--text-primary);
+  margin: 0 0 tokens.$spacing-md 0;
+  font-weight: tokens.$font-weight-semibold;
+}
+
+.emptyState p {
+  font-size: tokens.$font-size-base;
+  line-height: 1.6;
+  margin: 0;
+}
+
+// Animações
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsividade
+@media (max-width: tokens.$breakpoint-sm) {
+  .progressSection {
+    padding: tokens.$spacing-lg tokens.$spacing-sm;
+  }
+  
+  .searchSection {
+    margin-bottom: tokens.$spacing-xl;
+  }
+}
+
+// Acessibilidade
+@media (prefers-reduced-motion: reduce) {
+  .playerData {
+    animation: none;
+  }
+  
+  .button:hover {
+    transform: none;
+  }
+}

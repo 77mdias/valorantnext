@@ -1,0 +1,156 @@
+@use '../../../../styles/tokens' as tokens;
+
+.overviewCard {
+  @include tokens.card-base;
+  padding: var(--spacing-card);
+  display: flex;
+  align-items: center;
+  gap: tokens.$spacing-md;
+  min-height: 120px;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--progress-accent);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+  }
+  
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+.iconContainer {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(145, 70, 255, 0.1);
+  border-radius: tokens.$card-radius-sm;
+  color: var(--progress-accent);
+  
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.content {
+  flex: 1;
+  min-width: 0; // Para permitir truncate
+}
+
+.label {
+  font-size: tokens.$font-size-sm;
+  font-weight: tokens.$font-weight-medium;
+  color: var(--text-label);
+  margin: 0 0 tokens.$spacing-xs 0;
+  @include tokens.text-truncate;
+}
+
+.value {
+  font-size: tokens.$font-size-3xl;
+  font-weight: tokens.$font-weight-bold;
+  color: var(--text-value);
+  line-height: 1.2;
+  margin-bottom: tokens.$spacing-xs;
+  
+  // Responsivo para valores muito grandes
+  @media (max-width: tokens.$breakpoint-sm) {
+    font-size: tokens.$font-size-2xl;
+  }
+}
+
+.subtitle {
+  font-size: tokens.$font-size-xs;
+  color: var(--text-subtitle);
+  margin: 0;
+  @include tokens.text-truncate;
+}
+
+// Variações de cores para diferentes tipos de cards
+.overviewCard {
+  // Rank card
+  &[data-type="rank"] {
+    .iconContainer {
+      background: rgba(255, 215, 0, 0.1);
+      color: #ffd700;
+    }
+    
+    &::before {
+      background: #ffd700;
+    }
+  }
+  
+  // Win rate card
+  &[data-type="winrate"] {
+    .iconContainer {
+      background: rgba(0, 208, 132, 0.1);
+      color: var(--progress-success);
+    }
+    
+    &::before {
+      background: var(--progress-success);
+    }
+  }
+  
+  // K/D card
+  &[data-type="kd"] {
+    .iconContainer {
+      background: rgba(255, 70, 85, 0.1);
+      color: var(--progress-danger);
+    }
+    
+    &::before {
+      background: var(--progress-danger);
+    }
+  }
+  
+  // HS% card
+  &[data-type="hs"] {
+    .iconContainer {
+      background: rgba(0, 168, 255, 0.1);
+      color: var(--progress-info);
+    }
+    
+    &::before {
+      background: var(--progress-info);
+    }
+  }
+}
+
+// Estados de loading
+.overviewCard.loading {
+  pointer-events: none;
+  
+  .content {
+    opacity: 0.6;
+  }
+  
+  .value {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    color: transparent;
+    border-radius: 4px;
+    min-height: 1em;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

@@ -205,7 +205,14 @@ export default function ProtectedPage() {
 		fetchAgents();
 	}, []);
 
-	if (loading) return <div>Loading...</div>;
+	if (loading) {
+		return (
+			<div className={styles.loadingContainer}>
+				<div className={styles.spinner}></div>
+				<p>Carregando aulas...</p>
+			</div>
+		);
+	}
 
 	return (
 		<>

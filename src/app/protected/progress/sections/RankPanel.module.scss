@@ -1,0 +1,250 @@
+@use '../../../../styles/tokens' as tokens;
+
+.rankPanel {
+  @include tokens.card-base;
+  padding: var(--spacing-card);
+  margin-bottom: tokens.$spacing-xl;
+  max-width: tokens.$container-max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: tokens.$spacing-lg;
+  padding-bottom: tokens.$spacing-md;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.title {
+  font-size: tokens.$font-size-xl;
+  font-weight: tokens.$font-weight-bold;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.season {
+  font-size: tokens.$font-size-sm;
+  color: var(--text-secondary);
+  background: rgba(145, 70, 255, 0.1);
+  padding: tokens.$spacing-xs tokens.$spacing-sm;
+  border-radius: tokens.$card-radius-sm;
+  border: 1px solid rgba(145, 70, 255, 0.2);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$spacing-lg;
+}
+
+.currentRank {
+  display: flex;
+  align-items: center;
+  gap: tokens.$spacing-md;
+}
+
+.rankIcon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: tokens.$card-radius;
+  border: 2px solid currentColor;
+  
+  svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.rankImage {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.rankInfo {
+  flex: 1;
+}
+
+.rankName {
+  font-size: tokens.$font-size-2xl;
+  font-weight: tokens.$font-weight-bold;
+  margin-bottom: tokens.$spacing-xs;
+  line-height: 1.2;
+}
+
+.rr {
+  font-size: tokens.$font-size-lg;
+  color: var(--text-secondary);
+  font-weight: tokens.$font-weight-medium;
+}
+
+.elo {
+  color: var(--text-muted);
+  font-weight: tokens.$font-weight-normal;
+}
+
+.progressSection {
+  background: rgba(255, 255, 255, 0.02);
+  padding: tokens.$spacing-md;
+  border-radius: tokens.$card-radius-sm;
+  border: 1px solid var(--card-border);
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: tokens.$spacing-sm;
+}
+
+.progressLabel {
+  font-size: tokens.$font-size-sm;
+  color: var(--text-secondary);
+  font-weight: tokens.$font-weight-medium;
+}
+
+.progressValue {
+  font-size: tokens.$font-size-sm;
+  color: var(--text-primary);
+  font-weight: tokens.$font-weight-semibold;
+}
+
+.progressBar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--progress-accent);
+  border-radius: 4px;
+  transition: width 0.8s ease-out;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shimmer 2s infinite;
+  }
+}
+
+.peakRank {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: tokens.$spacing-sm tokens.$spacing-md;
+  background: rgba(255, 215, 0, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: tokens.$card-radius-sm;
+}
+
+.peakLabel {
+  font-size: tokens.$font-size-sm;
+  color: var(--text-secondary);
+  font-weight: tokens.$font-weight-medium;
+}
+
+.peakValue {
+  font-size: tokens.$font-size-base;
+  font-weight: tokens.$font-weight-semibold;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: tokens.$spacing-sm;
+  
+  @media (min-width: tokens.$breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.statItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: tokens.$spacing-sm;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: tokens.$card-radius-sm;
+  border: 1px solid var(--card-border);
+}
+
+.statLabel {
+  font-size: tokens.$font-size-sm;
+  color: var(--text-secondary);
+}
+
+.statValue {
+  font-size: tokens.$font-size-sm;
+  color: var(--text-primary);
+  font-weight: tokens.$font-weight-semibold;
+}
+
+.noData {
+  text-align: center;
+  padding: tokens.$spacing-xl;
+  color: var(--text-muted);
+}
+
+// Estado de loading
+.loading {
+  .rankName, .rr, .progressValue, .peakValue, .statValue {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    color: transparent;
+    border-radius: 4px;
+    min-height: 1em;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+// Responsividade
+@media (max-width: tokens.$breakpoint-sm) {
+  .rankPanel {
+    margin: 0 tokens.$spacing-md tokens.$spacing-xl tokens.$spacing-md;
+    padding: var(--spacing-card-sm);
+  }
+  
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: tokens.$spacing-sm;
+  }
+  
+  .currentRank {
+    flex-direction: column;
+    text-align: center;
+    gap: tokens.$spacing-sm;
+  }
+  
+  .progressHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: tokens.$spacing-xs;
+  }
+}
