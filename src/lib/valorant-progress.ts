@@ -49,12 +49,12 @@ export async function getPlayerProgress(riotName: string, tag: string): Promise<
       // Dados de rank simulados - variação baseada no nome do jogador
       rank: {
         tier: generateRandomRank(riotName),
-        division: Math.floor(Math.random() * 3) + 1,
+        division: (Math.floor(Math.random() * 3) + 1).toString(),
         rr: Math.floor(Math.random() * 100),
         elo: 1500 + Math.floor(Math.random() * 1000),
         season: 'E8A3',
         peak: {
-          tier: 'Immortal',
+          tier: generateRandomRank(riotName),
           division: '1',
           rr: 34
         }
