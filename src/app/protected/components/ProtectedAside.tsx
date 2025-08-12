@@ -55,7 +55,7 @@ export default function ProtectedAside() {
 						</Link>
 					</li>
 					<li>
-						<Link href="/functions" onClick={handleLinkClick}>
+						<Link href="/protected/functions" onClick={handleLinkClick}>
 							<FontAwesomeIcon icon={faShieldAlt} />
 							Funções
 						</Link>

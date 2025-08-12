@@ -1,0 +1,178 @@
+@use '../../../../../scss/utils/variables' as *;
+
+.rolesGrid {
+  padding: 2rem;
+
+  h2 {
+    color: var(--text-primary);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  .roleGridItems {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+
+    .roleCard {
+      background-color: var(--card-bg);
+      border-radius: 15px;
+      border: 1px solid var(--border-card);
+      padding: 2rem;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .roleHeader {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+
+        .roleIcon {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          color: var(--text-primary);
+        }
+
+        h3 {
+          color: var(--text-primary);
+          font-size: 1.5rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+        }
+
+        .roleBadge {
+          background-color: var(--accent-primary);
+          color: var(--text-primary);
+          padding: 0.5rem 1rem;
+          border-radius: 15px;
+          font-size: 0.8rem;
+          font-weight: 600;
+          margin-left: auto;
+        }
+      }
+
+      &.duelista {
+        .roleIcon {
+          background-color: rgb(255, 36, 109);
+        }
+      }
+
+      &.iniciador {
+        .roleIcon {
+          background-color: rgb(127, 129, 0);
+        }
+      }
+
+      &.controlador {
+        .roleIcon {
+          background-color: rgb(78, 255, 202);
+        }
+      }
+
+      &.sentinela {
+        .roleIcon {
+          background-color: rgb(141, 0, 206);
+        }
+      }
+
+      .roleDescription {
+        p {
+          color: var(--text-secondary);
+          font-size: 1rem;
+          line-height: 1.5;
+        }
+
+        .roleCharacteristics {
+          margin-bottom: 1.5rem;
+
+          h4 {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+          }
+
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+              color: var(--text-secondary);
+              padding: 0.5rem 0;
+              position: relative;
+              padding-left: 1.5rem;
+
+              &::before {
+                content: '•';
+                position: absolute;
+                left: 0;
+                font-size: 1.2rem;
+              }
+            }
+          }
+        }
+
+        .roleAgents {
+          h4 {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+          }
+
+          .agentsList {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+
+            .agentTag {
+              background-color: var(--bg-agent);
+              color: var(--text-primary);
+              padding: 0.5rem 1rem;
+              border-radius: 15px;
+              font-size: 0.8rem;
+              border: 1px solid var(--border-card);
+              transition: all 0.3s ease;
+
+              &:hover {
+                background-color: var(--bg-agent-hover);
+                color: var(--text-primary);
+                border-color: var(--border-card-hover);
+              }
+            }
+          }
+        }
+      }
+
+      .roleLearnBtn {
+        background-color: var(--bg-button);
+        color: var(--text-primary);
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin-top: 1rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+      }
+    }
+  }
+}
+
+.strategiesSection {}
