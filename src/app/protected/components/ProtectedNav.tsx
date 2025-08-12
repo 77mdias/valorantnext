@@ -11,10 +11,10 @@ export default function ProtectedNav() {
 				<div className="flex gap-5 items-center font-semibold">
 					<Logo />
 				</div>
-				<div className={`${styles.searchBar}`}>
+				{/* <div className={`${styles.searchBar}`}>
 					<FontAwesomeIcon icon={faSearch} className=" text-white" />
 					<input type="text" placeholder="Buscar aulas..." className={`${styles.searchInput}`} />
-				</div>
+				</div> */}
 				{/* {!hasEnvVars ? <EnvVarWarning /> : <AuthButton />} */}
 				<AuthButton />
 			</div>
