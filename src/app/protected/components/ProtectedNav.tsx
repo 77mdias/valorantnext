@@ -1,6 +1,4 @@
 import { Logo } from '@/src/components/ui/logo';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import styles from './scss/Navbar.module.scss';
 import { AuthButton } from '@/src/components/auth-button';
 
