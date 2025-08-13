@@ -43,31 +43,31 @@ export default function ProtectedAside() {
 						<input type="text" placeholder="Buscar..." />
 					</div>
 					<li>
-						<Link href="/protected" onClick={handleLinkClick}>
+						<Link href="https://valorantnext.vercel.app/protected" onClick={handleLinkClick}>
 							<FontAwesomeIcon icon={faHome} />
 							Início
 						</Link>
 					</li>
 					<li>
-						<Link href="/protected/agent" onClick={handleLinkClick}>
+						<Link href="https://valorantnext.vercel.app/protected/agent" onClick={handleLinkClick}>
 							<FontAwesomeIcon icon={faUserSecret} />
 							Agentes
 						</Link>
 					</li>
 					<li>
-						<Link href="/protected/functions" onClick={handleLinkClick}>
+						<Link href="https://valorantnext.vercel.app/protected/functions" onClick={handleLinkClick}>
 							<FontAwesomeIcon icon={faShieldAlt} />
 							Funções
 						</Link>
 					</li>
 					<li>
-						<Link href="/maps" onClick={handleLinkClick}>
+						<Link href="https://valorantnext.vercel.app/protected/maps" onClick={handleLinkClick}>
 							<FontAwesomeIcon icon={faMap} />
 							Mapas
 						</Link>
 					</li>
 					<li>
-						<Link href="/settings" onClick={handleLinkClick}>
+						<Link href="https://valorantnext.vercel.app/protected/settings" onClick={handleLinkClick}>
 							<FontAwesomeIcon icon={faCog} />
 							Configurações
 						</Link>

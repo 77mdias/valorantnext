@@ -61,7 +61,7 @@ function DropdownProfile() {
 				<div className="py-1">
 					<MenuItem>
 						<a
-							href="/profile"
+							href="https://valorantnext.vercel.app/protected/profile"
 							className={`block px-4 py-2 text-base transition-colors duration-200 text-right ${styles.menuItem}`}
 							style={{
 								color: theme === 'light' ? '#1e293b' : '#efeff1',
@@ -77,7 +77,7 @@ function DropdownProfile() {
 					</MenuItem>
 					<MenuItem>
 						<a
-							href="/protected/progress"
+							href="https://valorantnext.vercel.app/protected/progress"
 							className={`block px-4 py-2 text-base transition-colors duration-200 text-right ${styles.menuItem}`}
 							style={{
 								color: theme === 'light' ? '#1e293b' : '#efeff1',
